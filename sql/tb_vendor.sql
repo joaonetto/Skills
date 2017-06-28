@@ -15,6 +15,7 @@ create table actar.tb_vendor (
 
     Auxilio sheets:
     ="insert into " & Tabelas!$B$6 & " values ( null, '" & B2 & "');"
+
   */
 
 	idVendor int auto_increment not null,
