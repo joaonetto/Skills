@@ -12,6 +12,7 @@ create table actar.tb_tech (
       -> Outros
 
     A relacao externa se da com Quais Vendors tem as Tecnicas/Tecnologias acima
+    As perguntas tem que ter relacao com qual tecnologia ela pertence
   */
 
 	idTech int auto_increment not null,

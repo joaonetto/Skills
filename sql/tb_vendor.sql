@@ -13,6 +13,7 @@ create table actar.tb_vendor (
 
     Não existe relacao Externa
 
+    Auxilio sheets:
     ="insert into " & Tabelas!$B$6 & " values ( null, '" & B2 & "');"
   */
 
