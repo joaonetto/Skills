@@ -11,6 +11,7 @@ create table actar.tb_funcionarios (
 	idFuncionario int auto_increment not null,
   nomeFuncionario varchar(256) not null,
   emailFuncionario varchar(256) not null,
+  dtFuncionarios datetime not null,
   constraint PK_Funcionario primary key(idFuncionario)
 
 ) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;
