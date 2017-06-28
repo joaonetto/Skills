@@ -25,4 +25,4 @@ create table actar.tb_answerv (
   constraint PK_Resposta_idQuestionsV foreign key(idQuestionsV)
     references actar.tb_questionsv(idQuestionsV)
 
-) engine = InnoDB;
+) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;

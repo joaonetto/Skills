@@ -21,4 +21,4 @@ create table actar.tb_questionsv (
   constraint PK_Question_Departamento foreign key(idDepartamento)
   	references actar.tb_departamento(idDepartamento)
 
-) engine = InnoDB;
+) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;

@@ -22,4 +22,4 @@ create table actar.tb_vendor (
   nomeVendor varchar(256) not null,
   constraint PK_Vendor primary key(idVendor)
 
-) engine = InnoDB;
+) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;
