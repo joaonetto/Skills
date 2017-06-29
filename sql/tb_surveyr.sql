@@ -15,7 +15,7 @@ create table actar.tb_surveyr (
       inner join actar.tb_funcionarios on actar.tb_surveyr.idFuncionario = actar.tb_funcionarios.idFuncionario);
   */
 
-	idSurveyR int auto_increment not null,
+	idSurveyR int unique auto_increment not null,
   idSurvey int not null,
   idFuncionario int not null,
   constraint PK_SurveyR primary key(idSurveyR),

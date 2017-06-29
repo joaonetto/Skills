@@ -7,7 +7,7 @@ create table actar.tb_survey (
     Sem Relacao Externa
   */
 
-	idSurvey int auto_increment not null,
+	idSurvey int unique auto_increment not null,
   dtSuvey date not null,
   constraint PK_Survey primary key(idSurvey)
 
