@@ -9,7 +9,7 @@ create table actar.tb_questions (
   */
 
 	idQuestions int auto_increment not null,
-  nomeQuestions varchar(256) not null,
+  desQuestions varchar(256) not null,
   constraint PK_Question primary key(idQuestions)
 
 ) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;
