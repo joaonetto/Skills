@@ -5,6 +5,22 @@ create table actar.tb_questionsr (
 		-> Deverá associar a pergunta a tabela: tb_vendor;
 		-> Deverá associar a qual tecnologia a pergunta é referenciada na tabela: tb_tech
 		-> Deverá associar qual departamento cabe a pergunta utilizando a tabela: tb_departamento
+
+    Exemplo Consulta:
+    select
+      actar.tb_survey.idSurvey,
+      actar.tb_questions.nomeQuestions,
+      actar.tb_vendors.*,
+      actar.tb_departamentos.*,
+      actar.tb_tech.*
+    from ((((( actar.tb_questionsr
+      inner join actar.tb_survey        on actar.tb_survey.idSurvey               = actar.tb_questionsr.idSurvey)
+      inner join actar.tb_questions     on actar.tb_questions.idQuestions         = actar.tb_questionsr.idQuestions)
+      inner join actar.tb_vendors       on actar.tb_vendors.idVendor              = actar.tb_questionsr.idVendor)
+      inner join actar.tb_departamentos on actar.tb_departamentos.idDepartamento  = actar.tb_questionsr.idDepartamento)
+      inner join actar.tb_tech          on actar.tb_tech.idTech                   = actar.tb_questionsr.idTech)
+      ;
+
 	*/
 
 	idQuestionsR int unique auto_increment not null,
