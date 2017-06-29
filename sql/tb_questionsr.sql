@@ -7,19 +7,22 @@ create table actar.tb_questionsr (
 		-> Deverá associar qual departamento cabe a pergunta utilizando a tabela: tb_departamento
 	*/
 
-	idQuestionsR int auto_increment not null,
-	idVendor int not null,
-	idTech int not null,
-	idDepartamento int not null,
+	idQuestionsR int unique auto_increment not null,
 	idQuestions int not null,
+	idSurvey int not null,
+	idVendor int not null,
+	idDepartamento int not null,
+  idTech int not null,
 	constraint PK_QuestionR primary key(idQuestionsR),
-	constraint PK_QuestionR_Vendor foreign key(idVendor)
-		references actar.tb_vendor(idVendor),
-	constraint PK_QuestionR_Tech foreign key(idTech)
-		references actar.tb_tech(idTech),
-	constraint PK_QuestionR_Departamento foreign key(idDepartamento)
-		references actar.tb_departamento(idDepartamento),
 	constraint PK_QuestionR_Questions foreign key(idQuestions)
-		references actar.tb_questions(idQuestions)
+		references actar.tb_questions(idQuestions),
+	constraint PK_QuestionR_Survey foreign key(idSurvey)
+		references actar.tb_survey(idSurvey),
+	constraint PK_QuestionR_Vendors foreign key(idVendor)
+		references actar.tb_vendors(idVendor),
+	constraint PK_QuestionR_Departamentos foreign key(idDepartamento)
+		references actar.tb_departamentos(idDepartamento),
+  constraint PK_QuestionR_Tech foreign key(idTech)
+  	references actar.tb_tech(idTech),
 
 ) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;
