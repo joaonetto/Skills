@@ -14,7 +14,7 @@ create table actar.tb_tech (
     Sem Relacao Externa
   */
 
-	idTech int auto_increment not null,
+	idTech int unique auto_increment not null,
   nomeTech varchar(256) not null,
   constraint PK_Tech primary key(idTech)
 

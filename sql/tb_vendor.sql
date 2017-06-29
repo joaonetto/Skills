@@ -18,7 +18,7 @@ create table actar.tb_vendor (
 
   */
 
-	idVendor int auto_increment not null,
+	idVendor int unique auto_increment not null,
   nomeVendor varchar(256) not null,
   constraint PK_Vendor primary key(idVendor)
 

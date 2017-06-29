@@ -1,4 +1,4 @@
-create table actar.tb_departamento (
+create table actar.tb_departamentos (
 
   /*
     Tabela para o Cadastro das Areas Internas.
@@ -8,7 +8,7 @@ create table actar.tb_departamento (
       -> Suporte
   */
 
-	idDepartamento int auto_increment not null,
+	idDepartamento int unique auto_increment not null,
   nomeDepartamento varchar(256) not null,
   constraint PK_Departamento primary key(idDepartamento)
 
