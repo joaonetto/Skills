@@ -1,4 +1,4 @@
-create table actar.tb_vendor (
+create table actar.tb_vendors (
 
   /*
     Tabela para o Cadastro dos Vendors.
