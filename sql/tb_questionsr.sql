@@ -15,7 +15,7 @@ create table actar.tb_questionsr (
   idTech int not null,
 	constraint PK_QuestionR primary key(idQuestionsR),
   constraint PK_QuestionR_SurveyR foreign key(idSurvey)
-		references actar.tb_surveyr(idSurvey),
+		references actar.tb_survey(idSurvey),
 	constraint PK_QuestionR_Questions foreign key(idQuestions)
 		references actar.tb_questions(idQuestions),
 	constraint PK_QuestionR_Vendors foreign key(idVendor)
