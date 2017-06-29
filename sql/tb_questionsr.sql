@@ -23,6 +23,6 @@ create table actar.tb_questionsr (
 	constraint PK_QuestionR_Departamentos foreign key(idDepartamento)
 		references actar.tb_departamentos(idDepartamento),
   constraint PK_QuestionR_Tech foreign key(idTech)
-  	references actar.tb_tech(idTech),
+  	references actar.tb_tech(idTech)
 
 ) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;
