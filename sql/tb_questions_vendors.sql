@@ -18,12 +18,12 @@ create table actar.tb_questions_vendors (
   idSurvey int not null,
   idQuestions int not null,
   idVendor int not null,
-  constraint PK_Questions_Vendors primary key(idQuestions_vendors),
-  constraint PK_Questions_Survey foreign key(idSurvey)
+  constraint PK_QuestionsVendors primary key(idQuestions_vendors),
+  constraint PK_QuestionsVendors_Survey foreign key(idSurvey)
     references actar.tb_survey(idSurvey),
-  constraint PK_Questions_Vendors_Questions foreign key(idQuestions)
+  constraint PK_QuestionsVendors_Questions foreign key(idQuestions)
     references actar.tb_questions(idQuestions),
-  constraint PK_Questions_Vendors_Vendors foreign key(idVendor)
+  constraint PK_QuestionsVendors_Vendors foreign key(idVendor)
     references actar.tb_vendors(idVendor)
 
 ) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;
