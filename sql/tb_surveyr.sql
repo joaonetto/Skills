@@ -1,6 +1,11 @@
 create table actar.tb_surveyr (
 
   /*
+		===============================
+		AINDA NAO SEI SE É NECESSARIO.
+		EM ANALISE
+		===============================
+
     Tabela para de Relacao entre:
     -> tb_survey        => idSurvey
     -> tb_funcionarios  => idFuncionario
