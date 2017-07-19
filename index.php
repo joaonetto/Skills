@@ -20,23 +20,54 @@ $app->get(
 $app->get('/funcionarios-:id_func', function($id_func){
 
     $sql = new Sql();
-    $teste = intval($id_func);
-    var_dump($teste);
-    /*
-    if (intval($id_func)) = 0 {
-        $data = $sql->select("SELECT * FROM actar.tb_funcionarios order by nomeFuncionario asc;");
-    } else {
-        $data = $sql->select("SELECT * FROM actar.tb_funcionarios where idFuncionario = $id_func;");
-    }*/
 
-    /*
-    foreach ($data as &$funcionario) {
-        $nome = $funcionario['nomeFuncionario'];
+    if (intval($id_func) == 0) {
+      $data = $sql->select("SELECT * FROM actar.tb_funcionarios order by nomeFuncionario asc;");
+    } else {
+      $data = $sql->select("SELECT * FROM actar.tb_funcionarios where idFuncionario = $id_func;");
+    }
+
+    if (!empty($data)) {
+      echo json_encode($data);
+    }
+});
+
+$app->get('/questions', function(){
+
+    $sql = new Sql();
+    $b = array();
+    $data = $sql->select("SELECT * FROM actar.vw_questions_vendors;");
+
+    /*foreach ($data as &$vendors) {
+      $teste = $vendors['nomeVendor'];
+      array_push($b, array(
+        'idVendor' => $vendors['idVendor'],
+        'nomeVendor' => $vendors['nomeVendor']
+      ));
     }
     */
 
-    echo json_encode($data);
 
+    if (!empty($data)) {
+      echo json_encode($data);
+    }
+    /*
+    if (!empty($b)) {
+      echo json_encode($b);
+    }
+    */
+});
+
+$app->get('/questions2', function(){
+
+    $sql = new Sql();
+    $b = array();
+    $data = $sql->select("SELECT * FROM actar.vw_questions_vendors;");
+
+
+    if (!empty($data)) {
+      echo json_encode(convertToHierarchy($data));
+    }
 });
 
 
@@ -314,5 +345,76 @@ $app->get("/calcular-frete-:cep", function($cep){
     ));
 
 });
+
+function convertToHierarchy($results, $idField='idVendor', $parentIdField='idVendor', $childrenField='Questions') {
+	$hierarchy = array(); // -- Stores the final data
+	$itemReferences = array(); // -- temporary array, storing references to all items in a single-dimention
+  $a = 0;
+  $teste = $results[0][1];
+
+
+
+
+	foreach ( $results as $item ) {
+    $id = $item[$idField];
+    //$hierarchy[$teste] = $item[$idField];
+    if ($teste == $id) {
+      //$itemReferences[$id][$childrenField][$id] = $item['idQuestions_vendors'];
+      //$itemReferences[$id][$childrenField][$id] = $item['desQuestions'];
+      //var_dump($itemReferences);
+      $itemReferences[$id][$childrenField][$a][0] = $item['idQuestions_vendors'];
+      $itemReferences[$id][$childrenField][$a][1] = $item['desQuestions'];
+      $a++;
+      //var_dump($a);
+      //$itemReferences[$id] =& $hierarchy[$id];
+    } else {
+      $teste = $item[$idField];
+      $itemReferences[$id][$childrenField][$a][0] = $item['idQuestions_vendors'];
+      $itemReferences[$id][$childrenField][$a][1] = $item['desQuestions'];
+      $a=0;
+    }
+
+
+
+    //$hierarchy[$id][1] = $item['nomeVendor'];
+    //$a++;
+		/*$id_vendor= $item['nomeVendor'];
+
+		if (isset($itemReferences[$parentId])) { // parent exists
+			$itemReferences[$parentId][$childrenField][$id] = $item; // assign item to parent
+			$itemReferences[$id] =& $itemReferences[$parentId][$childrenField][$id]; // reference parent's item in single-dimentional array
+		} elseif (!$parentId || !isset($hierarchy[$parentId])) { // -- parent Id empty or does not exist. Add it to the root
+			$hierarchy[$id] = $item;
+			$itemReferences[$id] =& $hierarchy[$id];
+		}
+    */
+	}
+  //echo $a;
+  //echo json_encode($itemReferences);
+  print_r($itemReferences);
+  //echo json_encode($hierarchy);
+  exit;
+
+	unset($results, $item, $id, $parentId);
+
+	// -- Run through the root one more time. If any child got added before it's parent, fix it.
+	foreach ( $hierarchy as $id => &$item ) {
+		$parentId = $item[$parentIdField];
+
+		if ( isset($itemReferences[$parentId] ) ) { // -- parent DOES exist
+			$itemReferences[$parentId][$childrenField][$id] = $item; // -- assign it to the parent's list of children
+			unset($hierarchy[$id]); // -- remove it from the root of the hierarchy
+		}
+	}
+
+
+
+
+	unset($itemReferences, $id, $item, $parentId);
+
+	return $hierarchy;
+}
+
+
 
 $app->run();

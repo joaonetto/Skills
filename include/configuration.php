@@ -7,7 +7,7 @@ class Sql {
 
 	public function __construct(){
 
-		return $this->conn = mysqli_connect("10.0.1.9", "root", "Laboratorio", "actar");
+		return $this->conn = mysqli_connect("10.0.1.20", "root", "Laboratorio", "actar");
 
 	}
 
