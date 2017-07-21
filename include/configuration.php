@@ -4,7 +4,7 @@ session_start();
 class Sql {
 	public $conn;
 	public function __construct(){
-		return $this->conn = mysqli_connect("10.0.1.20", "root", "Laboratorio", "actar");
+		return $this->conn = mysqli_connect("10.0.1.4", "root", "Laboratorio", "actar");
 	}
 
 	public function query($string_query){
