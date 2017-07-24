@@ -11,9 +11,7 @@ $app = new \Slim\Slim();
 $app->get(
     '/',
     function () {
-
         require_once("view/index.php");
-
     }
 );
 

@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="include/Bootstrap/css/bootstrap.min.css">
 		<script src="include/jQuery/jquery-3.2.1.min.js"></script>
 		<script src="include/Bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/skills.css">
-
+    <link rel="stylesheet" href="../lib/css/skills.css">
 	</head>
 	<body>
 		<header>
       <div class="container-logotipo">
-        <img id="logotipo" src="../img/ACTAR.png" alt="logotipo">
+        <img id="logotipo" src="../lib/img/ACTAR.png" alt="logotipo">
       </div>
       <div id="frasetopo" class="header-black">
         <h1>Análise de Skills ACTAR</h1>

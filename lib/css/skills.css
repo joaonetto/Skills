@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'OpenSans';
-  src: url('../../fonts/Open_Sans/OpenSans-Regular.ttf');
+  src: url('../../lib/fonts/Open_Sans/OpenSans-Regular.ttf');
   font-size: 1em;
 }
 
 @font-face {
   font-family: 'OpenSans-Light';
-  src: url('../../fonts/Open_Sans/OpenSans-Light.ttf');
+  src: url('../../lib/fonts/Open_Sans/OpenSans-Light.ttf');
   font-size: 1em;
 }
 
 @font-face {
   font-family: 'OpenSans-Bold-Italic';
-  src: url('../../fonts/Open_Sans/OpenSans-BoldItalic.ttf');
+  src: url('../../lib/fonts/Open_Sans/OpenSans-BoldItalic.ttf');
   font-size: 1em;
 }
 
