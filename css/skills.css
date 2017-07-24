@@ -67,7 +67,6 @@ header .header-copyright {
 }
 
 header .pull-right {
-  /* margin-right: -200px; */
   text-align: right;
   margin-right: 10px;
 }
@@ -84,7 +83,29 @@ section #corpo {
   font-family: 'OpenSans';
 }
 
-section #corpo h1{
+section #corpo h1 {
   color: #000;
   text-align: center;
+}
+
+section #corpo h5{
+  color: #000;
+  margin-left: 200px;
+}
+
+section table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: 200px;
+}
+
+section td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+section tr:nth-child(even) {
+    background-color: #dddddd;
 }
