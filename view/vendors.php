@@ -29,60 +29,123 @@
 				$myAnswers_Del = Array();
 				$myAnswers_Sup = Array();
 				foreach ($result2 as $column) {
+					//
+					// Inclusao de Dados para a formação de gráficos para Pré-Vendas
+					//
 					$result3 = $sql->select('
-					SELECT count(actar.tb_questions_answers.idFuncionario)
-					FROM ( actar.tb_questions_answers
-						INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
-					WHERE
-								(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
-						and (actar.tb_questions_answers.idDepartamento = 1)
-						and (actar.tb_questions_answers.answerFuncionario = 1)
-						and (actar.tb_funcionarios.analiseFuncionario = 1);');
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 1)
+							and (actar.tb_questions_answers.answerFuncionario = 1)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
 					$myAnswers_Pre[0] = $result3[0][0];
 
 					$result3 = $sql->select('
-					SELECT count(actar.tb_questions_answers.idFuncionario)
-					FROM ( actar.tb_questions_answers
-						INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
-					WHERE
-								(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
-						and (actar.tb_questions_answers.idDepartamento = 1)
-						and (actar.tb_questions_answers.answerFuncionario = 2)
-						and (actar.tb_funcionarios.analiseFuncionario = 1);');
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 1)
+							and (actar.tb_questions_answers.answerFuncionario = 2)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
 					$myAnswers_Pre[1] = $result3[0][0];
 
 					$result3 = $sql->select('
-					SELECT count(actar.tb_questions_answers.idFuncionario)
-					FROM ( actar.tb_questions_answers
-						INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
-					WHERE
-								(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
-						and (actar.tb_questions_answers.idDepartamento = 1)
-						and (actar.tb_questions_answers.answerFuncionario = 3)
-						and (actar.tb_funcionarios.analiseFuncionario = 1);');
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 1)
+							and (actar.tb_questions_answers.answerFuncionario = 3)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
 					$myAnswers_Pre[2] = $result3[0][0];
 
 					$result3 = $sql->select('
-					SELECT count(actar.tb_questions_answers.idFuncionario)
-					FROM ( actar.tb_questions_answers
-						INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
-					WHERE
-								(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
-						and (actar.tb_questions_answers.idDepartamento = 1)
-						and (actar.tb_questions_answers.answerFuncionario = 4)
-						and (actar.tb_funcionarios.analiseFuncionario = 1);');
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 1)
+							and (actar.tb_questions_answers.answerFuncionario = 4)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
 					$myAnswers_Pre[3] = $result3[0][0];
 
 					$result3 = $sql->select('
-					SELECT count(actar.tb_questions_answers.idFuncionario)
-					FROM ( actar.tb_questions_answers
-						INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
-					WHERE
-								(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
-						and (actar.tb_questions_answers.idDepartamento = 1)
-						and (actar.tb_questions_answers.answerFuncionario = 5)
-						and (actar.tb_funcionarios.analiseFuncionario = 1);');
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 1)
+							and (actar.tb_questions_answers.answerFuncionario = 5)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
 					$myAnswers_Pre[4] = $result3[0][0];
+
+					//
+					// Inclusao de Dados para a formação de gráficos para Delivery
+					//
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 2)
+							and (actar.tb_questions_answers.answerFuncionario = 1)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Del[0] = $result3[0][0];
+
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 2)
+							and (actar.tb_questions_answers.answerFuncionario = 2)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Del[1] = $result3[0][0];
+
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 2)
+							and (actar.tb_questions_answers.answerFuncionario = 3)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Del[2] = $result3[0][0];
+
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 2)
+							and (actar.tb_questions_answers.answerFuncionario = 4)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Del[3] = $result3[0][0];
+
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 2)
+							and (actar.tb_questions_answers.answerFuncionario = 5)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Del[4] = $result3[0][0];
+
+
 					var_dump($myAnswers_Pre);
 					echo '<br>';
 					var_dump(implode(", ",$myAnswers_Pre));
