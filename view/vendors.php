@@ -145,11 +145,64 @@
 							and (actar.tb_funcionarios.analiseFuncionario = 1);');
 					$myAnswers_Del[4] = $result3[0][0];
 
+					//
+					// Inclusao de Dados para a formação de gráficos para Suporte
+					//
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 3)
+							and (actar.tb_questions_answers.answerFuncionario = 1)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Sup[0] = $result3[0][0];
 
-					var_dump($myAnswers_Pre);
-					echo '<br>';
-					var_dump(implode(", ",$myAnswers_Pre));
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 3)
+							and (actar.tb_questions_answers.answerFuncionario = 2)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Sup[1] = $result3[0][0];
 
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 3)
+							and (actar.tb_questions_answers.answerFuncionario = 3)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Sup[2] = $result3[0][0];
+
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 3)
+							and (actar.tb_questions_answers.answerFuncionario = 4)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Sup[3] = $result3[0][0];
+
+					$result3 = $sql->select('
+						SELECT count(actar.tb_questions_answers.idFuncionario)
+						FROM ( actar.tb_questions_answers
+							INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario	= actar.tb_questions_answers.idFuncionario)
+						WHERE
+									(actar.tb_questions_answers.idQuestions = ' . $column['idQuestions'] .')
+							and (actar.tb_questions_answers.idDepartamento = 3)
+							and (actar.tb_questions_answers.answerFuncionario = 5)
+							and (actar.tb_funcionarios.analiseFuncionario = 1);');
+					$myAnswers_Sup[4] = $result3[0][0];
+					
 		    	echo '<div class="panel panel-default">';
 		      echo '	<div class="panel-heading"><strong>' . $column['desQuestions'] . '</strong></div>';
 			    echo '	<div class="panel-body">';
@@ -163,8 +216,12 @@
 					echo '				<td><div id="graphDiv' . $Count++ . '" ChartValues="'
 					 										. implode(", ",$myAnswers_Pre) . '">
 														</div></td>';
-					echo '				<td><div id="graphDiv' . $Count++ . '" ChartValues="1, 2, 9, 2, 3"></div></td>';
-					echo '				<td><div id="graphDiv' . $Count++ . '" ChartValues="1, 4, 5, 6, 2"></div></td>';
+					echo '				<td><div id="graphDiv' . $Count++ . '" ChartValues="'
+														 	. implode(", ",$myAnswers_Del) . '">
+														</div></td>';
+					echo '				<td><div id="graphDiv' . $Count++ . '" ChartValues="'
+															. implode(", ",$myAnswers_Sup) . '">
+														</div></td>';
 					echo '			</tr>';
 					echo '		</table>';
 					echo '	</div>';
