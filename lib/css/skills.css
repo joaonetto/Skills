@@ -94,9 +94,9 @@ section #corpo h5{
 }
 
 section table {
-  font-family: arial, sans-serif;
+  font-family: 'OpenSans';
   border-collapse: collapse;
-  width: 100%;
+  width: 40%;
   margin-left: 200px;
 }
 
