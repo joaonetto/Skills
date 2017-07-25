@@ -15,6 +15,13 @@ $app->get(
     }
 );
 
+$app->get(
+    '/vendors-:id_func',
+    function ($id_func) {
+        require_once("view/vendors.php");
+    }
+);
+
 $app->get('/funcionarios-:id_func', function($id_func){
 
     $sql = new Sql();

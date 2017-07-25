@@ -1,12 +1,17 @@
 <?php include_once("header.php");?>
 <?php
-  $sql = new Sql();
+  /* $sql = new Sql();
   $result1 = $sql->select("SELECT * FROM actar.tb_funcionarios where analiseFuncionario = 0 order by nomeFuncionario asc;");
   $total_result1 = $sql->select("SELECT count(*) FROM actar.tb_funcionarios where analiseFuncionario = 0;");
   $total_result1 = intval($total_result1[0][0]);
   $result2 = $sql->select("SELECT * FROM actar.tb_funcionarios where analiseFuncionario = 1 order by nomeFuncionario asc;");
   $total_result2 = $sql->select("SELECT count(nomeFuncionario) FROM actar.tb_funcionarios where analiseFuncionario = 1;");
   $total_result2 = intval($total_result2[0][0]);
+	*/
+	echo '<br>';
+	echo '<br>';
+	var_dump($id_func);
+	exit;
 ?>
 <section>
 	<div id="corpo">

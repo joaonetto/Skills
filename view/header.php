@@ -24,11 +24,12 @@
           <div class="btn-group">
               <button type="button" data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Análise por Vendors <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                  <li><a href="vendor_checkpoint.php">Checkpoint</a></li>
-                  <li><a href="#">Cisco</a></li>
-                  <li><a href="#">Juniper</a></li>
-                  <li><a href="#">Pulse Secure</a></li>
-                  <li><a href="#">Symantec</a></li>
+                  <li><a href="vendors-1">Checkpoint</a></li>
+                  <li><a href="vendors-2">Cisco</a></li>
+                  <li><a href="vendors-3">Juniper</a></li>
+                  <li><a href="vendors-4">Pulse Secure</a></li>
+									<li><a href="vendors-5">Radware</a></li>
+                  <li><a href="vendors-6">Symantec</a></li>
                   <li class="divider"></li>
                   <li><a href="#">Todos</a></li>
               </ul>
