@@ -1,16 +1,13 @@
 <?php
 session_start();
-
 class Sql {
 	public $conn;
 	public function __construct(){
-		return $this->conn = mysqli_connect("10.0.1.4", "root", "Laboratorio", "actar");
+		return $this->conn = mysqli_connect("10.0.1.5", "root", "Laboratorio", "actar");
 	}
-
 	public function query($string_query){
 		return mysqli_query($this->conn, $string_query);
 	}
-
 	public function select($string_query){
 		$result = $this->query($string_query);
 		$data = array();
@@ -23,10 +20,8 @@ class Sql {
 	    unset($result);
 	    return $data;
 	}
-
 	public function __destruct(){
 		mysqli_close($this->conn);
 	}
 }
-
 ?>

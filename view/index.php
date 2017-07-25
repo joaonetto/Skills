@@ -35,7 +35,7 @@
       <?php
         foreach ($result2 as $column) {
           echo '<tr>';
-          echo '<td>' . $column['nomeFuncionario'];
+          echo '<td>' . $column['nomeFuncionario'] . '</td>';
           echo '<td><a href=mailto:' . $column['emailFuncionario'] . '>'. $column['emailFuncionario'] . '</a></td>';
           echo '</tr>';
         }
