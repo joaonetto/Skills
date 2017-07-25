@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="include/Bootstrap/css/bootstrap.min.css">
-		<script src="include/jQuery/jquery-3.2.1.min.js"></script>
-		<script src="include/Bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../lib/css/skills.css">
+    <link rel="stylesheet" href="lib/Bootstrap/css/bootstrap.min.css">
+		<script src="lib/jQuery/jquery-3.2.1.min.js"></script>
+		<script src="lib/Bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../include/css/skills.css">
 	</head>
 	<body>
 		<header>
       <div class="container-logotipo">
-        <img id="logotipo" src="../lib/img/ACTAR.png" alt="logotipo">
+        <img id="logotipo" src="../include/img/ACTAR.png" alt="logotipo">
       </div>
       <div id="frasetopo" class="header-black">
         <h1>Análise de Skills ACTAR</h1>
@@ -22,7 +22,7 @@
         <div class="header-menu">
           <a class="btn btn-sm btn-success" href="index.php" role="button">Inicio</a>
           <div class="btn-group">
-              <button type="button" data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Análise por Vendors <span class="caret"></span></button>
+              <button type="button" data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Questões por Fabricantes<span class="caret"></span></button>
               <ul class="dropdown-menu">
                   <li><a href="vendors-1">Checkpoint</a></li>
                   <li><a href="vendors-2">Cisco</a></li>

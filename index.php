@@ -1,7 +1,7 @@
 <?php
 
 require 'include/configuration.php';
-require 'include/Slim-2.x/Slim/Slim.php';
+require 'lib/Slim-2.x/Slim/Slim.php';
 
 \Slim\Slim::registerAutoloader();
 

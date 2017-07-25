@@ -53,10 +53,12 @@
             echo '<td><a href=mailto:' . $column['emailFuncionario'] . '>'. $column['emailFuncionario'] . '</a></td>';
             echo '</tr>';
           }
-          echo '</table><br><br>';
+          echo '</table>';
         }
         unset($result1, $result2, $total_result1, $total_result2, $column, $sql);
       ?>
+      <br>
+      <br>
 	</div>
 </section>
 </body>
