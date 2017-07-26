@@ -421,6 +421,7 @@
       var ctx = createCanvas('graphDiv99');
       var valorString = document.getElementById('graphDiv99').getAttribute('ChartValues').split(', ');
       var plotaGrafico = criaGraph(ctx, valorString);
+
     }
   ()
 );

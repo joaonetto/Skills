@@ -32,7 +32,7 @@
 									<li><a href="vendors-5">Radware</a></li>
                   <li><a href="vendors-6">Symantec</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">Todos</a></li>
+                  <li><a href="vendors-0">Todos</a></li>
               </ul>
           </div>
           <div class="btn-group">

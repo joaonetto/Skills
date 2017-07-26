@@ -90,13 +90,19 @@ section #corpo {
 }
 
 section #corpo h1 {
-  color: #000;
+  color: rgba(94,41,154, 0.9);
   text-align: center;
+}
+
+section #corpo h3 {
+  color: rgba(94,41,154, 0.9);
+  margin-left: 200px;
 }
 
 section #corpo h5{
   color: #000;
   margin-left: 200px;
+  font-family: 'OpenSans-Light';
 }
 
 section #AreaGrafico {
