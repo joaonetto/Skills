@@ -114,28 +114,28 @@
       echo '<div class="panel panel-default">';
       echo '	<div class="panel-heading"><strong>' . $column['desQuestions'] . '</strong></div>';
       echo '	<div class="panel-body">';
-      echo '		<table class="tblGraph">';
-      echo '			<tr>';
-      echo '				<th>Pré-Vendas</th>';
-      echo '				<th>Delivery</th>';
-      echo '				<th>Suporte</th>';
-      echo '			</tr>';
-      echo '			<tr>';
-      echo '				<td><div id="graphDiv' . $Count1++ . '" ChartValues="'
-                          . implode(", ",$myAnswers_Pre) . '">
-                        </div></td>';
-      echo '				<td><div id="graphDiv' . $Count1++ . '" ChartValues="'
-                          . implode(", ",$myAnswers_Del) . '">
-                        </div></td>';
-      echo '				<td><div id="graphDiv' . $Count1++ . '" ChartValues="'
-                          . implode(", ",$myAnswers_Sup) . '">
-                        </div></td>';
-      echo '			</tr>';
-      echo '		</table>';
-      echo '	</div>';
+      echo '	 <div class="panel-espaco-interno">';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-12 cabecalho-tabela">Grafico</div>';
+      echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-individual">Pré-Vendas</div>';
+      echo '      <div class="col-md-4 cabecalho-individual">Delivery</div>';
+      echo '      <div class="col-md-4 cabecalho-individual">Suporte</div>';
+      echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div id="graphTipoA' . $Count1++ . '" ChartValues="'
+                          . implode(", ",$myAnswers_Pre) . '"></div>';
+      echo '      <div id="graphTipoA' . $Count1++ . '" ChartValues="'
+                          . implode(", ",$myAnswers_Del) . '"></div>';
+      echo '      <div id="graphTipoA' . $Count1++ . '" ChartValues="'
+                          . implode(", ",$myAnswers_Sup) . '"></div>';
+      echo '    </div>';
+      echo '   </div>';
+      echo '  </div>';
       echo '</div>';
     }
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql);
+    unset($result1, $result2, $total_result1, $total_result2, $column, $sql, $myAnswers_Pre, $myAnswers_Del, $myAnswers_Sup);
   ?>
   <br>
   <br>
@@ -143,4 +143,4 @@
 </section>
 </body>
 </html>
-<script src="../include/js/Chart2.js"></script>
+<script src="../include/js/ChartA.js"></script>

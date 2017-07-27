@@ -33,7 +33,7 @@ var myChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           suggestedMin: 0,
-          suggestedMax: 1,
+          suggestedMax: 10,
           beginAtZero:true
         }
       }]

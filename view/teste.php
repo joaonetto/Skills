@@ -25,7 +25,13 @@
         <th>Suporte</th>
       </tr>
       <tr>
-          <td>A</td>
+          <td>
+						<?php
+							$a = 12343.3556;
+							$b = number_format($a, 2, '.', '');
+							var_dump($b);
+							exit;
+					 ?></td>
           <td>B</td>
           <td>C</td>
       </tr>
@@ -35,4 +41,4 @@
 </body>
 </html>
 <script src="../include/js/Chart.js"></script>
-<canvas id="myChart" ChartValues='1, 2, 3, 2, 1'></canvas>
+<canvas id="myChart" ChartValues='1, 2, 3, 2, 1'></canvas></td>

@@ -110,25 +110,47 @@ section #AreaGrafico {
   height: 20%;
 }
 
-section td, th {
-    border: 1px solid #4b5267;
-    text-align: left;
-    padding: 8px;
+section table {
+  font-family: 'OpenSans';
+  border-collapse: collapse;
+  width: 65%;
+  margin-left: 200px;
 }
 
-section tr:nth-child(even) {
-    background-color: #dddddd;
-}
+/*section .panel-default {
+  width: 1050px;
+  margin-left: 200px;
+}*/
 
 section .panel-default {
   margin-left: 200px;
   width: 80%;
 }
 
-section .panel-heading {
-  font-size: 16px;
-  font-family: 'OpenSans-Bold';
+section .tblGraph {
+  margin-left: 5px;
+  width: 90%;
 }
+
+section .tblRanking {
+  margin-left: 5px;
+  width: 90%;
+}
+
+section .tblGraph th {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'OpenSans-Bold-Italic';
+  font-size: 14px;
+}
+
+/*
+section .container {
+  width: 80%;
+  margin-left: 200px;
+  margin-right: 20px;
+}
+*/
 
 section .panel-espaco-interno {
   border: 0;
@@ -176,4 +198,26 @@ section .grafico {
   padding: 2px;
   text-align: center;
   border-top: 0;
+}
+
+section .tblRanking th {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'OpenSans-Bold-Italic';
+  font-size: 10px;
+}
+
+section .ajustaCanvas {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+section td, th {
+    border: 1px solid #4b5267;
+    text-align: left;
+    padding: 8px;
+}
+
+section tr:nth-child(even) {
+    background-color: #dddddd;
 }
