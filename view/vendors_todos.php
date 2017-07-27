@@ -50,7 +50,6 @@
       actar.tb_funcionarios
     WHERE ( actar.tb_funcionarios.analiseFuncionario = 1 );");
     foreach ($result1 as $mResult) {
-      //$myArrayTeste[0][$mResult['nomeFuncionario']] = rand(10,100);
       for ($Count1=1; $Count1 <= 6 ; $Count1++) {
         $Count4 = 0;
         for ($Count2=1; $Count2 <= 3 ; $Count2++) {
@@ -79,6 +78,104 @@
         }
       }
     }
+    for ($Count1=1; $Count1 <= 6 ; $Count1++) {
+      arsort($myUsers_Pre[$Count1]);
+      arsort($myUsers_Del[$Count1]);
+      arsort($myUsers_Sup[$Count1]);
+    }
+    $Count1 = 1;
+    $Count2 = 1;
+    for ($Count1=1; $Count1 <= 6 ; $Count1++) {
+      foreach($myUsers_Pre[$Count1] as $Usuario => $Ranking) {
+        $result1 = $sql->select("
+          SELECT
+            actar.tb_funcionarios.nomeFuncionario
+          FROM
+            actar.tb_funcionarios
+          WHERE
+              ( actar.tb_funcionarios.idFuncionario = $Usuario );");
+        $myUsers_Pre_New[$Count1][$Count2][0] = $Usuario;
+        $myUsers_Pre_New[$Count1][$Count2][1] = $result1[0][0];
+        $myUsers_Pre_New[$Count1][$Count2][2] = $Ranking;
+        $Count2++;
+      }
+      $Count2=1;
+      foreach($myUsers_Del[$Count1] as $Usuario => $Ranking) {
+        $result1 = $sql->select("
+          SELECT
+            actar.tb_funcionarios.nomeFuncionario
+          FROM
+            actar.tb_funcionarios
+          WHERE
+              ( actar.tb_funcionarios.idFuncionario = $Usuario );");
+        $myUsers_Del_New[$Count1][$Count2][0] = $Usuario;
+        $myUsers_Del_New[$Count1][$Count2][1] = $result1[0][0];
+        $myUsers_Del_New[$Count1][$Count2][2] = $Ranking;
+        $Count2++;
+      }
+      $Count2=1;
+      foreach($myUsers_Sup[$Count1] as $Usuario => $Ranking) {
+        $result1 = $sql->select("
+          SELECT
+            actar.tb_funcionarios.nomeFuncionario
+          FROM
+            actar.tb_funcionarios
+          WHERE
+              ( actar.tb_funcionarios.idFuncionario = $Usuario );");
+        $myUsers_Sup_New[$Count1][$Count2][0] = $Usuario;
+        $myUsers_Sup_New[$Count1][$Count2][1] = $result1[0][0];
+        $myUsers_Sup_New[$Count1][$Count2][2] = $Ranking;
+        $Count2++;
+      }
+      $Count2=1;
+    }
+    /*
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    var_dump($myUsers_Pre[1]);
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    var_dump($myUsers_Del[1]);
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    var_dump($myUsers_Sup[1]);
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    var_dump(count($myUsers_Sup_New[1]));
+
+    for ($Count1=1; $Count1 <= 6; $Count1++) {
+      for ($i=1; $i < 13; $i++) {
+        echo 'Vendor: ' . $Count1 . '. ';
+        echo 'Usuario   ID Pre: ' . $myUsers_Pre_New[$Count1][$i][0] . '. ';
+        echo 'Usuario Nome Pre: ' . $myUsers_Pre_New[$Count1][$i][1] . '. ';
+        echo 'Ranking: '     . $myUsers_Pre_New[$Count1][$i][2] . '.<br>';
+
+        echo 'Vendor: ' . $Count1 . '. ';
+        echo 'Usuario   ID Del: ' . $myUsers_Del_New[$Count1][$i][0] . '. ';
+        echo 'Usuario Nome Del: ' . $myUsers_Del_New[$Count1][$i][1] . '. ';
+        echo 'Ranking: '     . $myUsers_Del_New[$Count1][$i][2] . '.<br>';
+
+        echo 'Vendor: ' . $Count1 . '. ';
+        echo 'Usuario   ID Sup: ' . $myUsers_Sup_New[$Count1][$i][0] . '. ';
+        echo 'Usuario Nome Sup: ' . $myUsers_Sup_New[$Count1][$i][1] . '. ';
+        echo 'Ranking: '     . $myUsers_Sup_New[$Count1][$i][2] . '.<br>';
+      }
+      echo '<br>';
+    }
+
+    exit;
+*/
+
 ?>
 <section>
   <div id="corpo">
@@ -126,62 +223,71 @@
   <?php
     $Count1 = 1;
     $Count2 = 1;
-    for ($Count1 = 1; $Count1 <= 1; $Count1++){
-      echo '<div class="panel panel-default panel-default-tipoB">';
-      echo '	<div class="panel-heading"><strong>' . $myAnswer[$Count1][0] . '</strong></div>';
-      echo '	<div class="panel-body panel-tipoB">';
+    $Count3 = 1;
+    for ($Count1 = 1; $Count1 <= 6; $Count1++){
+      echo '<div class="panel panel-default">';
+      echo '	<div class="panel-heading">' . $myAnswer[$Count1][0] . '</div>';
+      echo '	<div class="panel-body">';
       echo '    <p>As estatisticas abaixo do Fabricante <strong>' . $myAnswer[$Count1][0] .'</strong> foram geradas utilizando base nos valores abaixo:</p>';
       echo '    <ul>';
       echo '      <li>Quantidade de Perguntas: <strong>' . $myAnswer[$Count1][1] . ';</strong></li>';
       echo '      <li>Quantidade de Participantes: <strong>' . $total_funcionarios . ';</strong></li>';
+      echo '      <br>';
+      echo '      <li>Pontuação Máxima: <strong>' . (intval($myAnswer[$Count1][1])* 5) . '</strong></li>';
       echo '    </ul>';
-      echo '		<table class="tblGraph">';
-      echo '			<tr>';
-      echo '				<th>Pré-Vendas</th>';
-      echo '				<th>Delivery</th>';
-      echo '				<th>Suporte</th>';
-      echo '			</tr>';
-      echo '			<tr>';
-      echo '				<td>
-                      <div id="graphTipoB' . $Count2++ . '" class="col-sm-3" ChartValues="' .
-                        number_format((($myAnswer[$Count1][ 3] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][ 4] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][ 5] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][ 6] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][ 7] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '">
-                      </div><br>';
-      echo '          Ranking:<br>';
-      echo '		      <table class="tblRanking">';
-      echo '			     <tr>';
-      echo '            <th>Funcionario</th>';
-      echo '				    <th>Pontuação</th>';
-      echo '			     </tr>';
-      echo '			     <tr>';
-      echo '				    <td></td>';
-      echo '				    <td></td>';
-      echo '          </table>';
-      echo '        </td>';
-      echo '				<td>
-                      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                        number_format((($myAnswer[$Count1][ 8] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][ 9] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][10] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][11] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][12] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '">
-                      </div>
-                    </td>';
-      echo '				<td>
-                      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                        number_format((($myAnswer[$Count1][13] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][14] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][15] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][16] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                        number_format((($myAnswer[$Count1][17] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '">
-                      </div>
-                    </td>';
-      echo '			</tr>';
-      echo '		</table>';
-      echo '	</div>';
+      echo '	 <div class="panel-espaco-interno">';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-12 cabecalho-tabela">Grafico</div>';
+      echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-individual">Pré-Vendas</div>';
+      echo '      <div class="col-md-4 cabecalho-individual">Delivery</div>';
+      echo '      <div class="col-md-4 cabecalho-individual">Suporte</div>';
+      echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
+                    number_format((($myAnswer[$Count1][ 3] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 4] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 5] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 6] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 7] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '"></div>';
+      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
+                    number_format((($myAnswer[$Count1][ 8] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 9] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][10] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][11] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][12] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '"></div>';
+      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
+                    number_format((($myAnswer[$Count1][13] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][14] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][15] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][16] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][17] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '"></div>';
+      echo '    </div>';
+      echo '    <br>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-12 cabecalho-tabela">Ranking</div>';
+      echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-3 cabecalho-ranking">Funcionario</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
+      echo '      <div class="col-md-3 cabecalho-ranking">Funcionario</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
+      echo '      <div class="col-md-3 cabecalho-ranking">Funcionario</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
+      echo '    </div>';
+      for ($Count3 = 1; $Count3 <= count($myUsers_Pre_New[$Count1]) ; $Count3++) {
+        echo '    <div class="row">';
+        echo '      <div class="col-md-3 cabecalho-ranking-result">' . $myUsers_Pre_New[$Count1][$Count3][1] . '</div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Pre_New[$Count1][$Count3][2] . '</div>';;
+        echo '      <div class="col-md-3 cabecalho-ranking-result">' . $myUsers_Del_New[$Count1][$Count3][1] . '</div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Del_New[$Count1][$Count3][2] . '</div>';;
+        echo '      <div class="col-md-3 cabecalho-ranking-result">' . $myUsers_Sup_New[$Count1][$Count3][1] . '</div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Sup_New[$Count1][$Count3][2] . '</div>';;
+        echo '    </div>';
+      }
+      echo '   </div>';
+      echo '  </div>';
       echo '</div>';
     }
     unset($result1, $result2, $total_result1, $total_result2, $column, $sql);

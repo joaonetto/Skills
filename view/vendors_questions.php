@@ -112,7 +112,7 @@
       }
 
       echo '<div class="panel panel-default">';
-      echo '	<div class="panel-heading"><strong>' . $column['desQuestions'] . '</strong></div>';
+      echo '	<div class="panel-heading">' . $column['desQuestions'] . '</div>';
       echo '	<div class="panel-body">';
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';

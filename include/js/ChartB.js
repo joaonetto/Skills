@@ -4,7 +4,7 @@
       function createCanvas(divName) {
         var div = document.getElementById(divName);
         var canvas = document.createElement('canvas');
-        canvas.className = 'ajustaCanvas';
+        canvas.className = 'col-md-4 grafico';
         div.appendChild(canvas);
         if (typeof G_vmlCanvasManager != 'undefined') {
           canvas = G_vmlCanvasManager.initElement(canvas);
