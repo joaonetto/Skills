@@ -152,6 +152,34 @@ section .cabecalho-individual {
   border-top: 0;
 }
 
+section .cabecalho-tabela-funcionario {
+  border: 1px solid #4b5267;
+  padding: 2px;
+  text-align: center;
+  font-family: 'OpenSans-Bold';
+  font-size: 26px;
+  border-top: 0;
+  color: rgba(94,41,154, 0.9);s
+}
+
+section .text-blue {
+  color: rgba(47, 50, 238, 0.9);
+}
+
+section .text-green {
+  color: rgba(42, 187, 5, 0.9);
+}
+
+section .text-red {
+  color: rgba(187, 5, 33, 0.9);
+}
+
+section .text-bold {
+  /* color: rgba(187, 5, 33, 0.9); */
+  font-family: 'OpenSans-Bold';
+  font-size: 14px;
+}
+
 section .cabecalho-ranking {
   border: 1px solid #4b5267;
   padding: 2px;

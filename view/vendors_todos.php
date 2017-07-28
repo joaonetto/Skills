@@ -129,53 +129,6 @@
       }
       $Count2=1;
     }
-    /*
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    var_dump($myUsers_Pre[1]);
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    var_dump($myUsers_Del[1]);
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    var_dump($myUsers_Sup[1]);
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    var_dump(count($myUsers_Sup_New[1]));
-
-    for ($Count1=1; $Count1 <= 6; $Count1++) {
-      for ($i=1; $i < 13; $i++) {
-        echo 'Vendor: ' . $Count1 . '. ';
-        echo 'Usuario   ID Pre: ' . $myUsers_Pre_New[$Count1][$i][0] . '. ';
-        echo 'Usuario Nome Pre: ' . $myUsers_Pre_New[$Count1][$i][1] . '. ';
-        echo 'Ranking: '     . $myUsers_Pre_New[$Count1][$i][2] . '.<br>';
-
-        echo 'Vendor: ' . $Count1 . '. ';
-        echo 'Usuario   ID Del: ' . $myUsers_Del_New[$Count1][$i][0] . '. ';
-        echo 'Usuario Nome Del: ' . $myUsers_Del_New[$Count1][$i][1] . '. ';
-        echo 'Ranking: '     . $myUsers_Del_New[$Count1][$i][2] . '.<br>';
-
-        echo 'Vendor: ' . $Count1 . '. ';
-        echo 'Usuario   ID Sup: ' . $myUsers_Sup_New[$Count1][$i][0] . '. ';
-        echo 'Usuario Nome Sup: ' . $myUsers_Sup_New[$Count1][$i][1] . '. ';
-        echo 'Ranking: '     . $myUsers_Sup_New[$Count1][$i][2] . '.<br>';
-      }
-      echo '<br>';
-    }
-
-    exit;
-*/
-
 ?>
 <section>
   <div id="corpo">
@@ -269,21 +222,27 @@
       echo '      <div class="col-md-12 cabecalho-tabela">Ranking</div>';
       echo '    </div>';
       echo '    <div class="row">';
-      echo '      <div class="col-md-3 cabecalho-ranking">Funcionario</div>';
+      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
       echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
-      echo '      <div class="col-md-3 cabecalho-ranking">Funcionario</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
+      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
       echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
-      echo '      <div class="col-md-3 cabecalho-ranking">Funcionario</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
+      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
       echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
       echo '    </div>';
       for ($Count3 = 1; $Count3 <= count($myUsers_Pre_New[$Count1]) ; $Count3++) {
         echo '    <div class="row">';
-        echo '      <div class="col-md-3 cabecalho-ranking-result">' . $myUsers_Pre_New[$Count1][$Count3][1] . '</div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Pre_New[$Count1][$Count3][2] . '</div>';;
-        echo '      <div class="col-md-3 cabecalho-ranking-result">' . $myUsers_Del_New[$Count1][$Count3][1] . '</div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Del_New[$Count1][$Count3][2] . '</div>';;
-        echo '      <div class="col-md-3 cabecalho-ranking-result">' . $myUsers_Sup_New[$Count1][$Count3][1] . '</div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Sup_New[$Count1][$Count3][2] . '</div>';;
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Pre_New[$Count1][$Count3][0] . '">' . $myUsers_Pre_New[$Count1][$Count3][1] . '</a></div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Pre_New[$Count1][$Count3][2] . '</div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Pre_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Del_New[$Count1][$Count3][0] . '">' . $myUsers_Del_New[$Count1][$Count3][1] . '</a></div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Del_New[$Count1][$Count3][2] . '</div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Del_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Sup_New[$Count1][$Count3][0] . '">' . $myUsers_Sup_New[$Count1][$Count3][1] . '</a></div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Sup_New[$Count1][$Count3][2] . '</div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Sup_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
         echo '    </div>';
       }
       echo '   </div>';

@@ -28,17 +28,9 @@ $app->get(
 
 $app->get('/funcionarios-:id_func', function($id_func){
 
-    $sql = new Sql();
-
-    if (intval($id_func) == 0) {
-      $data = $sql->select("SELECT * FROM actar.tb_funcionarios order by nomeFuncionario asc;");
-    } else {
-      $data = $sql->select("SELECT * FROM actar.tb_funcionarios where idFuncionario = $id_func;");
-    }
-
-    if (!empty($data)) {
-      echo json_encode($data);
-    }
+    $idFunc_Vendor = substr($id_func,0,1);
+    $idFunc_IDFunc = substr($id_func,1,(strlen($id_func)-1));
+    require_once("view/vendors_funcionarios.php");
 });
 
 $app->get('/questions', function(){
