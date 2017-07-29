@@ -8,8 +8,6 @@
     WHERE
           ( actar.tb_tech_area.idTech_Area = $id_func );");
   $result1 = $result1[0][0];
-  var_dump($result1);
-  exit;
 ?>
 <section>
   <div id="corpo">
