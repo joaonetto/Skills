@@ -38,10 +38,6 @@ $app->get(
 $app->get(
     '/tech-:id_func',
     function($id_func){
-      $sql = new Sql();
-      $total_funcionarios = $sql->select("SELECT count(*) FROM actar.tb_funcionarios where analiseFuncionario = 1;");
-      $total_funcionarios = intval($total_funcionarios[0][0]);
-      unset($total_funcionarios, $sql);
       require_once("view/tech.php");
     }
 );
