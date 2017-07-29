@@ -3,6 +3,6 @@
 			if (intval($id_func) > 0) {
 				include_once("vendors_questions.php");
 			} else {
-				include_once("vendors_todos.php");
+				include_once("vendors_all.php");
 			}
 		?>
