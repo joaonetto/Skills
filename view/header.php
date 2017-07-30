@@ -60,7 +60,7 @@
 								}
 								?>
                   <li class="divider"></li>
-                  <li><a href="#">Resumo Tecnologia</a></li>
+                  <li><a href="tech-0">Resumo Tecnologia</a></li>
               </ul>
           </div>
           <div class="btn-group">

@@ -3,7 +3,7 @@
 	class Sql {
 		public $conn;
 		public function __construct(){
-			return $this->conn = mysqli_connect("10.0.1.10", "root", "Laboratorio", "actar");
+			return $this->conn = mysqli_connect("192.168.0.8", "root", "Laboratorio", "actar");
 		}
 		public function query($string_query){
 			return mysqli_query($this->conn, $string_query);
@@ -44,10 +44,11 @@
 
 	$result1 = $sql->select('
 		SELECT
-			COUNT( actar.tb_tech_area.idTech_Area )
+			actar.tb_tech_area.idTech_Area, actar.tb_tech_area.nomeTech_Area
 		FROM
-			actar.tb_tech_area;');
-	$GLOBALS['$qlb_TechArea_Total'] = intval($result1[0][0]);
+			actar.tb_tech_area
+		ORDER BY actar.tb_tech_area.nomeTech_Area ASC;');
+	$GLOBALS['$qlb_TechArea'] = $result1;
 
 	$result1 = $sql->select('
 		SELECT
