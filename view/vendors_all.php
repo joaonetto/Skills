@@ -184,7 +184,7 @@
       echo '    <p>As estatisticas abaixo do Fabricante <strong>' . $myAnswer[$Count1][0] .'</strong> foram geradas utilizando base nos valores abaixo:</p>';
       echo '    <ul>';
       echo '      <li>Quantidade de Perguntas: <strong>' . $myAnswer[$Count1][1] . ';</strong></li>';
-      echo '      <li>Quantidade de Participantes: <strong>' . $total_funcionarios . ';</strong></li>';
+      echo '      <li>Quantidade de Participantes: <strong>' . $GLOBALS['$qlb_Funcionarios_Total'] . ';</strong></li>';
       echo '      <br>';
       echo '      <li>Pontuação Máxima: <strong>' . (intval($myAnswer[$Count1][1])* 5) . '</strong></li>';
       echo '    </ul>';
@@ -199,23 +199,23 @@
       echo '    </div>';
       echo '    <div class="row">';
       echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                    number_format((($myAnswer[$Count1][ 3] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 4] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 5] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 6] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 7] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '"></div>';
+                    number_format((($myAnswer[$Count1][ 3] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 4] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 5] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 6] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 7] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
       echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                    number_format((($myAnswer[$Count1][ 8] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 9] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][10] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][11] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][12] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '"></div>';
+                    number_format((($myAnswer[$Count1][ 8] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][ 9] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][10] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][11] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][12] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
       echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                    number_format((($myAnswer[$Count1][13] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][14] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][15] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][16] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][17] / ($myAnswer[$Count1][1] * $total_funcionarios)) * 100 ), 2, ".", ""). '"></div>';
+                    number_format((($myAnswer[$Count1][13] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][14] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][15] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][16] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
+                    number_format((($myAnswer[$Count1][17] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
       echo '    </div>';
       echo '    <br>';
       echo '    <div class="row">';

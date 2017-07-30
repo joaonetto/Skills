@@ -25,29 +25,38 @@
 		}
 	}
 
+	$GLOBALS['$analiseSurvey'] = 1;
+
 	$sql = new Sql();
 	$result1 = $sql->select("
 		SELECT
 			COUNT(actar.tb_vendors.idVendor)
 		FROM
 			actar.tb_vendors;");
-	$qtd_Vendors = intval($result1[0][0]);
+	$GLOBALS['$glb_Vendors_Total'] = intval($result1[0][0]);
 
 	$result1 = $sql->select("
 		SELECT
 			COUNT( actar.tb_departamentos.idDepartamento )
 		FROM
 			actar.tb_departamentos;");
-	$qtd_Departamento = intval($result1[0][0]);
+	$GLOBALS['$glb_Departamento_Total'] = intval($result1[0][0]);
 
-	$result1 = $sql->select("
+	$result1 = $sql->select('
 		SELECT
 			COUNT( actar.tb_tech_area.idTech_Area )
 		FROM
-			actar.tb_tech_area;");
-	$qtd_TechArea = intval($result1[0][0]);
+			actar.tb_tech_area;');
+	$GLOBALS['$qlb_TechArea_Total'] = intval($result1[0][0]);
 
-	$GLOBALS['$analiseSurvey'] = 1;
+	$result1 = $sql->select('
+		SELECT
+			count(*)
+		FROM
+			actar.tb_funcionarios
+		WHERE analiseFuncionario = ' . intval($GLOBALS['$analiseSurvey']) . ';');
+	$GLOBALS['$qlb_Funcionarios_Total'] = intval($result1[0][0]);
+
 
 	unset($result1, $sql);
 ?>

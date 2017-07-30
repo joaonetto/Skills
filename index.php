@@ -19,9 +19,7 @@ $app->get(
     '/vendors-:id_func',
     function ($id_func) {
       $sql = new Sql();
-      $total_funcionarios = $sql->select("SELECT count(*) FROM actar.tb_funcionarios where analiseFuncionario = 1;");
-      $total_funcionarios = intval($total_funcionarios[0][0]);
-      unset($total_funcionarios, $sql);
+      unset($sql);
       require_once("view/vendors.php");
     }
 );
