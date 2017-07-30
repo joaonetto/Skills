@@ -47,7 +47,7 @@
 			actar.tb_tech_area;");
 	$qtd_TechArea = intval($result1[0][0]);
 
-	$analiseSurvey = 1;
+	$GLOBALS['$analiseSurvey'] = 1;
 
 	unset($result1, $sql);
 ?>
