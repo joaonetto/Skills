@@ -67,15 +67,15 @@
       echo '	<div class="panel-body">';
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';
-      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
-      echo '      <div class="col-md-4 cabecalho-techquestion-titulo">Gráfico</div>';
-      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-tabela">Gráfico</div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
       echo '    <div class="row">';
-      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '      <div id="graphTipoA' . $Count2++ . '" ChartValues="'
                           . implode(", ",$myAnswers_Tech) . '"></div>';
-      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
       echo '   </div>';
       echo '  </div>';

@@ -235,13 +235,13 @@
       echo '    </div>';
       for ($Count3 = 1; $Count3 <= count($myUsers_Pre_New[$Count1]) ; $Count3++) {
         echo '    <div class="row">';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Pre_New[$Count1][$Count3][0] . '">' . $myUsers_Pre_New[$Count1][$Count3][1] . '</a></div>';
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="vendorfunc-' . $Count1 . $myUsers_Pre_New[$Count1][$Count3][0] . '">' . $myUsers_Pre_New[$Count1][$Count3][1] . '</a></div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Pre_New[$Count1][$Count3][2] . '</div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Pre_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Del_New[$Count1][$Count3][0] . '">' . $myUsers_Del_New[$Count1][$Count3][1] . '</a></div>';
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="vendorfunc-' . $Count1 . $myUsers_Del_New[$Count1][$Count3][0] . '">' . $myUsers_Del_New[$Count1][$Count3][1] . '</a></div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Del_New[$Count1][$Count3][2] . '</div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Del_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Sup_New[$Count1][$Count3][0] . '">' . $myUsers_Sup_New[$Count1][$Count3][1] . '</a></div>';
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="vendorfunc-' . $Count1 . $myUsers_Sup_New[$Count1][$Count3][0] . '">' . $myUsers_Sup_New[$Count1][$Count3][1] . '</a></div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Sup_New[$Count1][$Count3][2] . '</div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Sup_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
         echo '    </div>';

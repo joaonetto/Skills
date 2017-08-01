@@ -180,6 +180,10 @@ section .text-bold {
   font-size: 14px;
 }
 
+section .cabecalho-vazio {
+  border: 0;
+}
+
 section .cabecalho-ranking {
   border: 1px solid #4b5267;
   padding: 2px;
@@ -203,26 +207,5 @@ section .grafico {
   text-align: center;
   padding: 2px;
   text-align: center;
-  border-top: 0;
-}
-
-section .cabecalho-techquestion-vazio {
-  border: 0;
-}
-
-section .cabecalho-techquestion-titulo {
-  border: 1px solid #4b5267;
-  padding: 2px;
-  text-align: center;
-  font-family: 'OpenSans-Bold';
-  font-size: 14px;
-}
-
-section .cabecalho-techquestion-individual {
-  border: 1px solid #4b5267;
-  padding: 2px;
-  text-align: center;
-  font-family: 'OpenSans-Light';
-  font-size: 12px;
   border-top: 0;
 }

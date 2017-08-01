@@ -24,11 +24,20 @@ $app->get(
 );
 
 $app->get(
-    '/funcionarios-:id_func',
+    '/vendorfunc-:id_func',
     function($id_func){
       $idFunc_Vendor = substr($id_func,0,1);
       $idFunc_IDFunc = substr($id_func,1,(strlen($id_func)-1));
       require_once("view/vendors_funcionarios.php");
+    }
+);
+
+$app->get(
+    '/techfunc-:id_func',
+    function($id_func){
+      $idFunc_Vendor = substr($id_func,0,1);
+      $idFunc_IDFunc = substr($id_func,1,(strlen($id_func)-1));
+      require_once("view/tech_funcionarios.php");
     }
 );
 
