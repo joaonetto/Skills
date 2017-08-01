@@ -87,7 +87,7 @@
       foreach ($myAnswer_User[$column_TechArea['idTech_Area']] as $idFuncionario => $valueAnswer) {
         echo '    <div class="row">';
         echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
-        echo '      <div class="col-md-2 cabecalho-techquestion-individual">' . $idFuncionario . '</div>';
+        echo '      <div class="col-md-2 cabecalho-techquestion-individual"><a href="techfunc-' . $column_TechArea['idTech_Area'] . $idFuncionario . '">' . $myUsers[$idFuncionario] . '</a></div>';
         echo '      <div class="col-md-1 cabecalho-techquestion-individual">' . $valueAnswer . '</div>';
         echo '      <div class="col-md-1 cabecalho-techquestion-individual">' . number_format((( $valueAnswer / ($GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] * 5)) * 100), 2, ".", "") . '</div>';
         echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';

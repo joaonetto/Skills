@@ -220,9 +220,9 @@ section .cabecalho-techquestion-titulo {
 
 section .cabecalho-techquestion-individual {
   border: 1px solid #4b5267;
-  border-top: 0;
   padding: 2px;
   text-align: center;
-  font-family: 'OpenSans-Bold';
-  font-size: 14px;
+  font-family: 'OpenSans-Light';
+  font-size: 12px;
+  border-top: 0;
 }
