@@ -93,7 +93,7 @@
       foreach ($myAnswer_User[$column_TechArea['idTech_Area']] as $idFuncionario => $valueAnswer) {
         echo '    <div class="row">';
         echo '      <div class="col-md-4 cabecalho-vazio"></div>';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="techfunc-' . $column_TechArea['idTech_Area'] . $idFuncionario . '-(' . $column_TechArea['idTech_Area'] . ')">' . $myUsers[$idFuncionario] . '</a></div>';
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="techfunc-' . $column_TechArea['idTech_Area'] . $idFuncionario . '-(' . $GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] . ',' . $valueAnswer . ')">' . $myUsers[$idFuncionario] . '</a></div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . $valueAnswer . '</div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format((( $valueAnswer / ($GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] * 5)) * 100), 2, ".", "") . '</div>';
         echo '      <div class="col-md-4 cabecalho-vazio"></div>';
