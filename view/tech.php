@@ -1,4 +1,4 @@
-<?php //include_once("header.php");?>
+<?php include_once("header.php");?>
 <?php
   if (intval($id_func) > 0) {
     include_once("tech_questions.php");

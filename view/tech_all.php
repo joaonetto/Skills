@@ -1,4 +1,3 @@
-
 <?php
   $Count1 = 1;
   $Count2 = 1;
@@ -29,8 +28,6 @@
       ksort($myAnswer_TechArea[$column_TechArea['idTech_Area']]);
       arsort($myAnswer_User[$column_TechArea['idTech_Area']]);
   }
-  var_dump($myAnswer_TechArea);
-  exit;
 ?>
 <section>
   <div id="corpo">
@@ -54,77 +51,23 @@
   <br>
   <br>
   <?php
-    $Count1 = 1;
-    $Count2 = 1;
-    $Count3 = 1;
-    for ($Count1 = 1; $Count1 <= 6; $Count1++){
+    foreach ($GLOBALS['$qlb_TechArea'] as $column_TechArea) {
       echo '<div class="panel panel-default">';
-      echo '	<div class="panel-heading">' . $myAnswer[$Count1][0] . '</div>';
+      echo '	<div class="panel-heading">' . $column_TechArea['nomeTech_Area'] . '</div>';
       echo '	<div class="panel-body">';
-      echo '    <p>As estatisticas abaixo do Fabricante <strong>' . $myAnswer[$Count1][0] .'</strong> foram geradas utilizando base nos valores abaixo:</p>';
+      echo '    <p>As estatisticas abaixo da Tecnologia <strong>' . $column_TechArea['nomeTech_Area'] .'</strong> foram geradas utilizando base nos valores abaixo:</p>';
       echo '    <ul>';
-      echo '      <li>Quantidade de Perguntas: <strong>' . $myAnswer[$Count1][1] . ';</strong></li>';
+      echo '      <li>Quantidade de Perguntas: <strong>' . $GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] . ';</strong></li>';
       echo '      <li>Quantidade de Participantes: <strong>' . $GLOBALS['$qlb_Funcionarios_Total'] . ';</strong></li>';
       echo '      <br>';
-      echo '      <li>Pontuação Máxima: <strong>' . (intval($myAnswer[$Count1][1])* 5) . '</strong></li>';
+      echo '      <li>Pontuação Máxima: <strong>' . ($GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] * 5) . '</strong></li>';
       echo '    </ul>';
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';
-      echo '      <div class="col-md-12 cabecalho-tabela">Grafico</div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-individual">Gráfico</div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
       echo '    </div>';
-      echo '    <div class="row">';
-      echo '      <div class="col-md-4 cabecalho-individual">Pré-Vendas</div>';
-      echo '      <div class="col-md-4 cabecalho-individual">Delivery</div>';
-      echo '      <div class="col-md-4 cabecalho-individual">Suporte</div>';
-      echo '    </div>';
-      echo '    <div class="row">';
-      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                    number_format((($myAnswer[$Count1][ 3] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 4] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 5] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 6] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 7] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
-      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                    number_format((($myAnswer[$Count1][ 8] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][ 9] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][10] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][11] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][12] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
-      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
-                    number_format((($myAnswer[$Count1][13] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][14] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][15] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][16] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
-                    number_format((($myAnswer[$Count1][17] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
-      echo '    </div>';
-      echo '    <br>';
-      echo '    <div class="row">';
-      echo '      <div class="col-md-12 cabecalho-tabela">Ranking</div>';
-      echo '    </div>';
-      echo '    <div class="row">';
-      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
-      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
-      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
-      echo '    </div>';
-      for ($Count3 = 1; $Count3 <= count($myUsers_Pre_New[$Count1]) ; $Count3++) {
-        echo '    <div class="row">';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Pre_New[$Count1][$Count3][0] . '">' . $myUsers_Pre_New[$Count1][$Count3][1] . '</a></div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Pre_New[$Count1][$Count3][2] . '</div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Pre_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Del_New[$Count1][$Count3][0] . '">' . $myUsers_Del_New[$Count1][$Count3][1] . '</a></div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Del_New[$Count1][$Count3][2] . '</div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Del_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="funcionarios-' . $Count1 . $myUsers_Sup_New[$Count1][$Count3][0] . '">' . $myUsers_Sup_New[$Count1][$Count3][1] . '</a></div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . $myUsers_Sup_New[$Count1][$Count3][2] . '</div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format(((intval($myUsers_Sup_New[$Count1][$Count3][2]) / (intval($myAnswer[$Count1][1]) * 5)) * 100), 2, ".", "") . '</div>';
-        echo '    </div>';
-      }
       echo '   </div>';
       echo '  </div>';
       echo '</div>';
