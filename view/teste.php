@@ -17,7 +17,7 @@
     <div class="panel-heading">Panel heading</div>
       <div class="panel-body">
         <p>Alguma Coisa</p>
-    </div>ssdsdfsdf
+    </div>
     <table class="table">
       <tr>
         <th>Pré-Vendas</th>
