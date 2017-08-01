@@ -210,8 +210,17 @@ section .cabecalho-techquestion-vazio {
   border: 0;
 }
 
+section .cabecalho-techquestion-titulo {
+  border: 1px solid #4b5267;
+  padding: 2px;
+  text-align: center;
+  font-family: 'OpenSans-Bold';
+  font-size: 14px;
+}
+
 section .cabecalho-techquestion-individual {
   border: 1px solid #4b5267;
+  border-top: 0;
   padding: 2px;
   text-align: center;
   font-family: 'OpenSans-Bold';

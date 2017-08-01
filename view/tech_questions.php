@@ -67,7 +67,7 @@
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
-      echo '      <div class="col-md-4 cabecalho-techquestion-individual">Gráfico</div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-titulo">Gráfico</div>';
       echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
       echo '    </div>';
       echo '    <div class="row">';

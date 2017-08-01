@@ -222,14 +222,14 @@
       echo '      <div class="col-md-12 cabecalho-tabela">Ranking</div>';
       echo '    </div>';
       echo '    <div class="row">';
-      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
+      echo '      <div class="col-md-2 cabecalho-ranking">Funcionário</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">Posição</div>';
       echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
-      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
+      echo '      <div class="col-md-2 cabecalho-ranking">Funcionário</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">Posição</div>';
       echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
-      echo '      <div class="col-md-2 cabecalho-ranking">Funcionario</div>';
-      echo '      <div class="col-md-1 cabecalho-ranking">Posicao</div>';
+      echo '      <div class="col-md-2 cabecalho-ranking">Funcionário</div>';
+      echo '      <div class="col-md-1 cabecalho-ranking">Posição</div>';
       echo '      <div class="col-md-1 cabecalho-ranking">%</div>';
       echo '    </div>';
       for ($Count3 = 1; $Count3 <= count($myUsers_Pre_New[$Count1]) ; $Count3++) {

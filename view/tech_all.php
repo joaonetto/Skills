@@ -1,8 +1,5 @@
 <?php
   $Count1 = 1;
-  $Count2 = 1;
-  $Count3 = 1;
-  $Count4 = 2;
   $myAnswer_User = Array();
   $myAnswer_Range= Array();
   $myUsers  = Array();
@@ -20,14 +17,20 @@
     ORDER BY
       actar.tb_funcionarios.idFuncionario,
       actar.tb_questions_tech_area_answers.answerFuncTechArea asc;');
-      foreach ($result1 as $column_Result1) {
-        $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] = $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] + $column_Result1['answerFuncTechArea'];
-        $myUsers[$column_Result1['idFuncionario']] = $column_Result1['nomeFuncionario'];
-        $myAnswer_TechArea[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']] = ($myAnswer_TechArea[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']]) + 1;
-      }
-      ksort($myAnswer_TechArea[$column_TechArea['idTech_Area']]);
-      arsort($myAnswer_User[$column_TechArea['idTech_Area']]);
+    foreach ($result1 as $column_Result1) {
+      $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] = $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] + $column_Result1['answerFuncTechArea'];
+      $myUsers[$column_Result1['idFuncionario']] = $column_Result1['nomeFuncionario'];
+      $myAnswer_TechArea[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']] = ($myAnswer_TechArea[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']]) + 1;
+    }
+    arsort($myAnswer_User[$column_TechArea['idTech_Area']]);
+    foreach ($myAnswer_TechArea[$column_TechArea['idTech_Area']] as $idArea => $valueArea) {
+      $myAnswer_TechArea[$column_TechArea['idTech_Area']][$idArea] =
+        number_format((( $valueArea ) / ( $GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] * $GLOBALS['$qlb_Funcionarios_Total'] ) * 100 ), 2, ".", "");
+    }
+    ksort($myAnswer_TechArea[$column_TechArea['idTech_Area']]);
   }
+  //var_dump($myAnswer_User[3]);
+  //exit;
 ?>
 <section>
   <div id="corpo">
@@ -51,6 +54,7 @@
   <br>
   <br>
   <?php
+    $Count1 = 1;
     foreach ($GLOBALS['$qlb_TechArea'] as $column_TechArea) {
       echo '<div class="panel panel-default">';
       echo '	<div class="panel-heading">' . $column_TechArea['nomeTech_Area'] . '</div>';
@@ -65,9 +69,30 @@
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
-      echo '      <div class="col-md-4 cabecalho-techquestion-individual">Gráfico</div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-titulo">Gráfico</div>';
       echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
       echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '      <div id="graphTipoB' . $Count1++ . '" ChartValues="'
+                          . implode(", ",$myAnswer_TechArea[$column_TechArea['idTech_Area']]) . '"></div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '    </div>';
+      echo '    <br>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-titulo">Ranking</div>';
+      echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+      echo '    </div>';
+      foreach ($myAnswer_User[$column_TechArea['idTech_Area']] as $idFuncionario => $valueAnswer) {
+        echo '    <div class="row">';
+        echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+        echo '      <div class="col-md-2 cabecalho-techquestion-individual">' . $idFuncionario . '</div>';
+        echo '      <div class="col-md-1 cabecalho-techquestion-individual">' . $valueAnswer . '</div>';
+        echo '      <div class="col-md-1 cabecalho-techquestion-individual">' . number_format((( $valueAnswer / ($GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] * 5)) * 100), 2, ".", "") . '</div>';
+        echo '      <div class="col-md-4 cabecalho-techquestion-vazio"></div>';
+        echo '    </div>';
+      }
       echo '   </div>';
       echo '  </div>';
       echo '</div>';
