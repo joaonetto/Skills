@@ -24,11 +24,12 @@
       foreach ($result1 as $column_Result1) {
         $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] = $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] + $column_Result1['answerFuncTechArea'];
         $myUsers[$column_Result1['idFuncionario']] = $column_Result1['nomeFuncionario'];
-        $myAnswer_Range[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']] = ($myAnswer_Range[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']]) + 1;
+        $myAnswer_TechArea[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']] = ($myAnswer_TechArea[$column_TechArea['idTech_Area']][$column_Result1['answerFuncTechArea']]) + 1;
       }
+      ksort($myAnswer_TechArea[$column_TechArea['idTech_Area']]);
       arsort($myAnswer_User[$column_TechArea['idTech_Area']]);
   }
-  var_dump($myAnswer_Range[3]);
+  var_dump($myAnswer_TechArea);
   exit;
 ?>
 <section>

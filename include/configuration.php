@@ -50,6 +50,24 @@
 		ORDER BY actar.tb_tech_area.nomeTech_Area ASC;');
 	$GLOBALS['$qlb_TechArea'] = $result1;
 
+	/*
+
+	$result1 = $sql->select('
+		SELECT
+			actar.tb_questions_tech_area.idTech_Area,
+			COUNT( actar.tb_questions_tech_area.idQuestions )
+		FROM
+			actar.tb_questions_tech_area
+		WHERE
+			actar.tb_questions_tech_area.idSurvey = ' . $GLOBALS['$analiseSurvey'] . '
+		GROUP BY
+			tb_questions_tech_area.idTech_Area;');
+	$GLOBALS['$qlb_Questions_TechArea_Total'] = $result1;
+	*/
+
+	//var_dump($GLOBALS['$qlb_Questions_TechArea_Total']);
+	exit;
+
 	$result1 = $sql->select('
 		SELECT
 			count(*)

@@ -1,5 +1,5 @@
 <?php
-
+echo 'Carregando Configuration';
 require 'include/configuration.php';
 require 'lib/Slim-2.x/Slim/Slim.php';
 
