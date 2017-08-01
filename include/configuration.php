@@ -61,8 +61,6 @@
 		GROUP BY
 			tb_questions_tech_area.idTech_Area;');
 	$GLOBALS['$qlb_Questions_TechArea_Total'] = $result1;
-	//var_dump($GLOBALS['$qlb_Questions_TechArea_Total']);
-	//exit;
 
 	$result1 = $sql->select('
 		SELECT

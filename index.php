@@ -35,8 +35,10 @@ $app->get(
 $app->get(
     '/techfunc-:id_func',
     function($id_func){
-      $idFunc_Vendor = substr($id_func,0,1);
-      $idFunc_IDFunc = substr($id_func,1,(strlen($id_func)-1));
+      $idTechFunc[0] = substr($id_func,0,1); // Referente a idTech_Area
+      $idTechFunc[1] = substr($id_func,1,(strpos($id_func, '('))-2); // Referente ao idFuncionario
+      $idTechFunc[2] = substr($id_func, (strpos($id_func,'(') + 1), (strpos($id_func,',') - strpos($id_func,'(')) - 1); // Referente a Quantidade de Questoes
+      $idTechFunc[3] = substr($id_func, (strpos($id_func,',') + 1), (strpos($id_func,')') - strpos($id_func,',')) - 1); // Referente ao Ranking
       require_once("view/tech_funcionarios.php");
     }
 );
