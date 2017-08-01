@@ -1,4 +1,5 @@
 <?php
+  $time_start = microtime(true);
   $sql = new Sql();
   $result1 = $sql->select("
     SELECT
@@ -90,3 +91,9 @@
 </body>
 </html>
 <script src="../include/js/ChartA.js"></script>
+<?php
+  $time_end = microtime(true);
+
+  $time = $time_end - $time_start;
+  echo 'Processado e Carregado em: ' . $time;
+?>

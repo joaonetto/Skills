@@ -1,5 +1,6 @@
 <?php include_once("header.php");?>
 <?php
+  $time_start = microtime(true);
   $sql = new Sql();
   $result1 = $sql->select("
     SELECT
@@ -167,3 +168,9 @@
 </section>
 </body>
 </html>
+<?php
+  $time_end = microtime(true);
+
+  $time = $time_end - $time_start;
+  echo 'Processado e Carregado em: ' . $time;
+ ?>

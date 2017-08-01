@@ -1,5 +1,6 @@
 
 <?php
+  $time_start = microtime(true);
   $Count1 = 1;
   $Count2 = 1;
   $Count3 = 1;
@@ -258,3 +259,9 @@
 </body>
 </html>
 <script src="../include/js/ChartB.js"></script>
+<?php
+  $time_end = microtime(true);
+
+  $time = $time_end - $time_start;
+  echo 'Processado e Carregado em: ' . $time;
+ ?>

@@ -1,8 +1,9 @@
 <?php
-  $Count1 = 1;
-  $myAnswer_User = Array();
-  $myAnswer_Range= Array();
-  $myUsers  = Array();
+  $time_start = microtime(true);
+  $Count1             = 1;
+  $myAnswer_User      = Array();
+  $myAnswer_TechArea  = Array();
+  $myUsers            = Array();
   $sql = new Sql();
   foreach ($GLOBALS['$qlb_TechArea'] as $column_TechArea) {
     $result1 = $sql->select('
@@ -29,8 +30,6 @@
     }
     ksort($myAnswer_TechArea[$column_TechArea['idTech_Area']]);
   }
-  //var_dump($myAnswer_User[3]);
-  //exit;
 ?>
 <section>
   <div id="corpo">
@@ -106,3 +105,9 @@
 </body>
 </html>
 <script src="../include/js/ChartB.js"></script>
+<?php
+  $time_end = microtime(true);
+
+  $time = $time_end - $time_start;
+  echo 'Processado e Carregado em: ' . $time;
+?>

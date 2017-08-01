@@ -1,4 +1,5 @@
 <?php
+  $time_start = microtime(true);
   $sql = new Sql();
   $result1 = $sql->select("select actar.tb_vendors.nomeVendor from actar.tb_vendors where actar.tb_vendors.idVendor = $id_func;");
   $result1 = $result1[0][0];
@@ -144,3 +145,9 @@
 </body>
 </html>
 <script src="../include/js/ChartA.js"></script>
+<?php
+  $time_end = microtime(true);
+
+  $time = $time_end - $time_start;
+  echo 'Processado e Carregado em: ' . $time;
+ ?>
