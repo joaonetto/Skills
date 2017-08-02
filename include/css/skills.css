@@ -77,6 +77,33 @@ header .pull-right {
   margin-right: 10px;
 }
 
+/* TEMPORARIO de TESTE */
+
+header .header-teste {
+  width: 100%;
+  border: 1px;
+  color: black;
+  /* margin-left: 20%; */
+  margin-top: 20px;
+  height: 50px;
+}
+
+header .header-posicao-menu {
+  text-align: right;
+}
+
+header .header-jnetto {
+  text-align: right;
+  font-family: 'OpenSans-Light';
+  color: rgba(94,41,154, 0.9);
+  font-size: 11px;
+  margin-top: -35px;
+}
+
+/* FIM TEMPORARIO de TESTE */
+
+
+
 header #frasetopo {
 	display: block;
 	color: #FFF;

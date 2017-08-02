@@ -43,6 +43,51 @@
       <div id="frasetopo" class="header-black">
         <h1>Análise de Skills ACTAR</h1>
       </div>
+			<div class="row header-teste">
+				<div class="col-md-12 header-posicao-menu">
+					<div class="btn-group">
+					  <button type="button" class="btn btn-success">Inicio</button>
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Questões por Fabricantes<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Tablet</a></li>
+								<li><a href="#">Smartphone</a></li>
+							</ul>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Questões por Tecnologia<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Tablet</a></li>
+								<li><a href="#">Smartphone</a></li>
+							</ul>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ferramentas ACTAR<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Tablet</a></li>
+								<li><a href="#">Smartphone</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row header-teste">
+				<div class="col-md-12 header-jnetto">
+					Powered by ACTAR Technologies. All rights reserved.<br>Created by JNetto</p>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			tb_questions_ferramentas_answers
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
       <div class="header-topo">
         <div class="header-menu">
           <a class="btn btn-sm btn-success" href="index.php" role="button">Inicio</a>
