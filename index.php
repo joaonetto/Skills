@@ -74,4 +74,13 @@ $app->get(
     }
 );
 
+$app->get(
+    '/ferrquestion-:id_func',
+    function($id_func){
+      $idTechQuestion[0] = substr($id_func, 0, (strpos($id_func, '(')) - 1); // Referente a idQuestion
+      $idTechQuestion[1] = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
+      require_once("view/ferramentas_individual.php");
+    }
+);
+
 $app->run();
