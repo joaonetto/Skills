@@ -54,9 +54,10 @@
   <br>
   <?php
     $Count1 = 1;
+    $valorMedio = 0;
     foreach ($GLOBALS['$qlb_TechArea'] as $column_TechArea) {
       echo '<div class="panel panel-default">';
-      echo '	<div class="panel-heading">' . $column_TechArea['nomeTech_Area'] . '</div>';
+      echo '	<div class="panel-heading"><a href="tech-' . $column_TechArea['idTech_Area'] . '">'. $column_TechArea['nomeTech_Area'] . '</a></div>';
       echo '	<div class="panel-body">';
       echo '    <p>As estatisticas abaixo da Tecnologia <strong>' . $column_TechArea['nomeTech_Area'] .'</strong> foram geradas utilizando base nos valores abaixo:</p>';
       echo '    <ul>';
@@ -98,10 +99,24 @@
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format((( $valueAnswer / ($GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] * 5)) * 100), 2, ".", "") . '</div>';
         echo '      <div class="col-md-4 cabecalho-vazio"></div>';
         echo '    </div>';
+        $valorMedio = $valorMedio + $valueAnswer;
       }
+      echo '    <br>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-tabela">Valor Médio</div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-tabela-funcionario text-blue">' . number_format(($valorMedio / (($GLOBALS['$qlb_Questions_TechArea_Total'][$column_TechArea['idTech_Area'] - 1]['TechArea_Total'] * 5) * $GLOBALS['$qlb_Funcionarios_Total']) * 100), 2, ".", "") . '%</div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '    </div>';
+      echo '    <br>';
       echo '   </div>';
       echo '  </div>';
       echo '</div>';
+      $valorMedio = 0;
     }
     unset($result1, $result2, $total_result1, $total_result2, $column, $sql);
   ?>
