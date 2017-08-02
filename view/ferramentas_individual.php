@@ -21,8 +21,6 @@
       actar.tb_funcionarios.nomeFuncionario ASC;');
   $idTechQuestion[2] = $result1[0][3];
   $idTechQuestion[3] = $result1[0][1];
-  //var_dump($result1);
-  //exit;
 ?>
 <section>
   <div id="corpo">
