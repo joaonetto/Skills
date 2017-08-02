@@ -9,3 +9,4 @@
 
 #Executado
 1-> Criar tech_all<br>
+2-> Adicionar em TEch_ALL Médias Ponderadas<br>
