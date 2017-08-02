@@ -14,6 +14,13 @@
 			actar.tb_tech_area
 		ORDER BY
 			actar.tb_tech_area.nomeTech_Area ASC;");
+	$result3 = $sql->select("
+		SELECT
+			actar.tb_ferramentas.idFerramenta, actar.tb_ferramentas.nomeFerramenta
+		FROM
+			actar.tb_ferramentas
+		ORDER BY
+			actar.tb_ferramentas.nomeFerramenta ASC;");
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,21 +62,24 @@
               <button type="button" data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Questões por Tecnologia <span class="caret"></span></button>
               <ul class="dropdown-menu dropdown-menu-right">
 								<?php
-								foreach ($result2 as $column) {
-									echo '<li><a href="tech-'. $column['idTech_Area'] .'">' . $column['nomeTech_Area'] . '</a></li>';
-								}
+									foreach ($result2 as $column) {
+										echo '<li><a href="tech-'. $column['idTech_Area'] .'">' . $column['nomeTech_Area'] . '</a></li>';
+									}
 								?>
                   <li class="divider"></li>
                   <li><a href="tech-0">Resumo Tecnologia</a></li>
               </ul>
           </div>
           <div class="btn-group">
-              <button type="button" data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle">Action <span class="caret"></span></button>
+              <button type="button" data-toggle="dropdown" class="btn btn-sm btn-warning dropdown-toggle">Ferramentas ACTAR<span class="caret"></span></button>
               <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
+								<?php
+									foreach ($result3 as $column) {
+										echo '<li><a href="ferramentas-'. $column['idFerramenta'] .'">' . $column['nomeFerramenta'] . '</a></li>';
+									}
+								?>
                   <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">Resumo Ferramentas</a></li>
               </ul>
           </div>
           <div class="btn-group">

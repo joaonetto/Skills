@@ -33,6 +33,13 @@ $app->get(
 );
 
 $app->get(
+    '/tech-:id_func',
+    function($id_func){
+      require_once("view/tech.php");
+    }
+);
+
+$app->get(
     '/techfunc-:id_func',
     function($id_func){
       $idTechFunc[0] = substr($id_func,0,1); // Referente a idTech_Area
@@ -61,9 +68,9 @@ $app->get(
 );
 
 $app->get(
-    '/tech-:id_func',
+    '/ferramentas-:id_func',
     function($id_func){
-      require_once("view/tech.php");
+      require_once("view/ferramentas.php");
     }
 );
 
