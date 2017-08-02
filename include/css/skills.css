@@ -159,7 +159,17 @@ section .cabecalho-tabela-funcionario {
   font-family: 'OpenSans-Bold';
   font-size: 26px;
   border-top: 0;
-  color: rgba(94,41,154, 0.9);s
+  color: rgba(94,41,154, 0.9);
+}
+
+section .cabecalho-tabela-funcionario-individual {
+  border: 1px solid #4b5267;
+  padding: 2px;
+  text-align: center;
+  font-family: 'OpenSans-Bold';
+  font-size: 14px;
+  border-top: 0;
+  color: rgba(94,41,154, 0.9);
 }
 
 section .text-blue {

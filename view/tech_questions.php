@@ -63,7 +63,7 @@
       }
 
       echo '<div class="panel panel-default">';
-      echo '	<div class="panel-heading">' . $column['desQuestions'] . '</div>';
+      echo '	<div class="panel-heading"><a href="techquestion-' . $column['idQuestions'] . '-(' . implode(", ",$myAnswers_Tech) . ')">' . $column['desQuestions'] . '</a></div>';
       echo '	<div class="panel-body">';
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';
