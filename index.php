@@ -37,8 +37,16 @@ $app->get(
     function($id_func){
       $idTechFunc[0] = substr($id_func,0,1); // Referente a idTech_Area
       $idTechFunc[1] = substr($id_func,1,(strpos($id_func, '('))-2); // Referente ao idFuncionario
-      $idTechFunc[2] = substr($id_func, (strpos($id_func,'(') + 1), (strpos($id_func,',') - strpos($id_func,'(')) - 1); // Referente a Quantidade de Questoes
-      $idTechFunc[3] = substr($id_func, (strpos($id_func,',') + 1), (strpos($id_func,')') - strpos($id_func,',')) - 1); // Referente ao Ranking
+      $tempValue = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
+
+      for ($i=1; $i <= 4 ; $i++) {
+        if ($i < 4) {
+          $idTechFunc[$i + 1] = substr($tempValue, 0, strpos($tempValue, ','));
+          $tempValue = substr($tempValue, strpos($tempValue, ',') + 1, (strlen($tempValue) - strpos($tempValue, ',') + 1));
+        } elseif ($i = 4) {
+            $idTechFunc[5] = $tempValue;
+        }
+      }
       require_once("view/tech_funcionarios.php");
     }
 );

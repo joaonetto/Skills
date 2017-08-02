@@ -16,60 +16,14 @@
       and ( actar.tb_funcionarios.analiseFuncionario = 1 )
     ORDER BY
   	  actar.tb_questions.desQuestions ASC;');
-      echo '<br>';
-      echo '<br>';
-      echo '<br>';
-      echo '<br>';
-      echo '<br>';
-      echo '<br>';
-      echo '<br>';
-      echo '<br>';
-
-
-  var_dump($result1);
-  exit;
-
-
-  $result3 = $sql->select("
-    SELECT
-      actar.tb_vendors.nomeVendor
-    FROM
-      actar.tb_vendors
-    WHERE
-      ( actar.tb_vendors.idVendor ) = $idFunc_Vendor;");
-  $result3 = $result3[0][0];
-
-  $result4 = $sql->select("
-    SELECT
-      count( actar.tb_questions_answers.idQuestions )
-    FROM
-      actar.tb_questions_answers
-    WHERE
-          ( actar.tb_questions_answers.idVendor  = $idFunc_Vendor )
-      and ( actar.tb_questions_answers.idFuncionario = $idFunc_IDFunc )
-      and ( actar.tb_questions_answers.idDepartamento = 1 );");
-  $myArrayFuncionario[0] = $result4[0][0];
-
-  for ($Count1 = 1; $Count1 <= 3 ; $Count1++) {
-    $result4 = $sql->select("
-      SELECT
-        SUM( actar.tb_questions_answers.answerFuncionario )
-      FROM
-        actar.tb_questions_answers
-      WHERE
-            ( actar.tb_questions_answers.idVendor  = $idFunc_Vendor )
-        and ( actar.tb_questions_answers.idFuncionario = $idFunc_IDFunc )
-        and ( actar.tb_questions_answers.idDepartamento = $Count1 );");
-    $myArrayFuncionario[$Count1] = $result4[0][0];
-  }
 ?>
 <section>
   <div id="corpo">
     <h1>Análise das Questões Individuais de
       <br>
-      <?php echo $result1 ?>
+      <?php echo $idTechFunc[4] ?>
       <br>
-      <?php echo $result3 ?>
+      <?php echo $idTechFunc[5] ?>
       <br>
       <br>
     </h1>
@@ -87,29 +41,17 @@
           </ul>
           <br>
           <br>
-          Para maiores detalhes sobre as respostas individuais de <?php echo $result1 ?>, verifique os dados abaixo:
+          Para maiores detalhes sobre as respostas individuais de <?php echo $idTechFunc[4] ?>, verifique os dados abaixo:
           <br>
           <br>
           <ul>
-            <li>Total de Questões: <p class = 'text-bold'><?php echo intval($myArrayFuncionario[0]) ?></p></li>
-            <li>Total de Pontos disponíveis por Área: <p class = 'text-bold'><?php echo intval($myArrayFuncionario[0] * 5) ?></p></li>
+            <li>Total de Questões: <p class = 'text-bold'><?php echo $idTechFunc[2] ?></p></li>
+            <li>Total de Pontos disponíveis pela Tecnologia: <p class = 'text-bold'><?php echo intval($idTechFunc[2] * 5) ?></p></li>
             <br>
-            <li class='text-bold'>Área de Pré-Vendas:</li>
+            <li class='text-bold'>Análise Individual para a Área de Tecnologia:</li>
             <ul>
-              <li>Total de Pontos: <p class = 'text-bold'><?php echo $myArrayFuncionario[1] ?></p></li>
-              <li>Percentual das Respostas: <p class = 'text-bold'><?php echo number_format((($myArrayFuncionario[1] / ($myArrayFuncionario[0] * 5)) * 100), 2, ".", "") ?>%</p></li>
-            </ul>
-            <br>
-            <li class='text-bold'>Área de Delivery:</li>
-            <ul>
-              <li>Total de Pontos: <p class = 'text-bold'><?php echo $myArrayFuncionario[2] ?></p></li>
-              <li>Percentual das Respostas: <p class = 'text-bold'><?php echo number_format((($myArrayFuncionario[2] / ($myArrayFuncionario[0] * 5)) * 100), 2, ".", "") ?>%</p></li>
-            </ul>
-            <br>
-            <li class='text-bold'>Área de Suporte:</li>
-            <ul>
-              <li>Total de Pontos: <p class = 'text-bold'><?php echo $myArrayFuncionario[3] ?></p></li>
-              <li>Percentual das Respostas: <p class = 'text-bold'><?php echo number_format((($myArrayFuncionario[3] / ($myArrayFuncionario[0] * 5)) * 100), 2, ".", "") ?>%</p></li>
+              <li>Total de Pontos: <p class = 'text-bold'><?php echo $idTechFunc[3] ?></p></li>
+              <li>Percentual das Respostas: <p class = 'text-bold'><?php echo number_format((($idTechFunc[3] / ($idTechFunc[2] * 5)) * 100), 2, ".", "") ?>%</p></li>
             </ul>
           </ul>
         </div>
@@ -120,51 +62,33 @@
   <?php
     $Count1 = 0;
     $Count2 = 1;
-    foreach ($result2 as $column) {
-      if ( $Count1 <> intval($column['idQuestions']) ) {
-        echo '<div class="panel panel-default">';
-        echo '	<div class="panel-heading">' . $column['desQuestions'] . '</div>';
-        echo '	<div class="panel-body">';
-        echo '	 <div class="panel-espaco-interno">';
-        echo '    <div class="row">';
-        echo '      <div class="col-md-12 cabecalho-tabela">Resultado</div>';
-        echo '    </div>';
-        echo '    <div class="row">';
-        echo '      <div class="col-md-4 cabecalho-individual">Pré-Vendas</div>';
-        echo '      <div class="col-md-4 cabecalho-individual">Delivery</div>';
-        echo '      <div class="col-md-4 cabecalho-individual">Suporte</div>';
-        echo '    </div>';
-        echo '    <div class="row">';
-        if (intval($column['answerFuncionario']) < 3 ){
+    foreach ($result1 as $column) {
+      echo '<div class="panel panel-default">';
+      echo '	<div class="panel-heading">' . $column['desQuestions'] . '</div>';
+      echo '	<div class="panel-body">';
+      echo '	 <div class="panel-espaco-interno">';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '      <div class="col-md-4 cabecalho-tabela">Resultado</div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '    </div>';
+      echo '    <div class="row">';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+        if (intval($column['answerFuncTechArea']) < 3 ){
           echo '<div class="col-md-4 cabecalho-tabela-funcionario text-red">';
-        } elseif (intval($column['answerFuncionario']) == 3 ) {
+        } elseif (intval($column['answerFuncTechArea']) == 3 ) {
           echo '<div class="col-md-4 cabecalho-tabela-funcionario text-green">';
-        } elseif (intval($column['answerFuncionario']) > 3) {
+        } elseif (intval($column['answerFuncTechArea']) > 3) {
           echo '<div class="col-md-4 cabecalho-tabela-funcionario text-blue">';
         }
-        echo $column['answerFuncionario'] . '</div>';
-        $Count1 = intval($column['idQuestions']);
-        $Count2++;
-      } else {
-        if (intval($column['answerFuncionario']) < 3 ){
-          echo '<div class="col-md-4 cabecalho-tabela-funcionario text-red">';
-        } elseif (intval($column['answerFuncionario']) == 3 ) {
-          echo '<div class="col-md-4 cabecalho-tabela-funcionario text-green">';
-        } elseif (intval($column['answerFuncionario']) > 3) {
-          echo '<div class="col-md-4 cabecalho-tabela-funcionario text-blue">';
-        }
-        echo $column['answerFuncionario'] . '</div>';
-        if ($Count2 == 2) {
-          $Count2++;
-        } elseif ($Count2 == 3) {
-          echo '    </div>';
-          echo '   </div>';
-          echo '  </div>';
-          echo '</div>';
-          $Count2 = 1;
-        }
-      }
+      echo $column['answerFuncTechArea'] . '</div>';
+      echo '      <div class="col-md-4 cabecalho-vazio"></div>';
+      echo '    </div>';
+      echo '   </div>';
+      echo '  </div>';
+      echo '</div>';
     }
+
     unset($result1, $result2, $total_result1, $total_result2, $column, $sql, $myAnswers_Pre, $myAnswers_Del, $myAnswers_Sup);
   ?>
   <br>
