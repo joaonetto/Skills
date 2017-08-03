@@ -95,7 +95,7 @@
 							<ul class="dropdown-menu dropdown-menu-right">
 								<?php
 									foreach ($result4 as $column) {
-										echo '<li><a href="ferramentas-'. $column['idSoftSkills'] .'">' . $column['nomeSoftSkills'] . '</a></li>';
+										echo '<li><a href="softskills-'. $column['idSoftSkills'] .'">' . $column['nomeSoftSkills'] . '</a></li>';
 									}
 								?>
 									<li class="divider"></li>

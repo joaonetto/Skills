@@ -40,6 +40,15 @@ $app->get(
 );
 
 $app->get(
+    '/techquestion-:id_func',
+    function($id_func){
+      $idTechQuestion[0] = substr($id_func, 0, (strpos($id_func, '(')) - 1); // Referente a idQuestion
+      $idTechQuestion[1] = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
+      require_once("view/tech_individual.php");
+    }
+);
+
+$app->get(
     '/techfunc-:id_func',
     function($id_func){
       $idTechFunc[0] = substr($id_func,0,1); // Referente a idTech_Area
@@ -55,6 +64,22 @@ $app->get(
         }
       }
       require_once("view/tech_funcionarios.php");
+    }
+);
+
+$app->get(
+    '/ferramentas-:id_func',
+    function($id_func){
+      require_once("view/ferramentas.php");
+    }
+);
+
+$app->get(
+    '/ferrquestion-:id_func',
+    function($id_func){
+      $idTechQuestion[0] = substr($id_func, 0, (strpos($id_func, '(')) - 1); // Referente a idQuestion
+      $idTechQuestion[1] = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
+      require_once("view/ferramentas_individual.php");
     }
 );
 
@@ -78,27 +103,9 @@ $app->get(
 );
 
 $app->get(
-    '/techquestion-:id_func',
+    '/softskills-:id_func',
     function($id_func){
-      $idTechQuestion[0] = substr($id_func, 0, (strpos($id_func, '(')) - 1); // Referente a idQuestion
-      $idTechQuestion[1] = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
-      require_once("view/tech_individual.php");
-    }
-);
-
-$app->get(
-    '/ferramentas-:id_func',
-    function($id_func){
-      require_once("view/ferramentas.php");
-    }
-);
-
-$app->get(
-    '/ferrquestion-:id_func',
-    function($id_func){
-      $idTechQuestion[0] = substr($id_func, 0, (strpos($id_func, '(')) - 1); // Referente a idQuestion
-      $idTechQuestion[1] = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
-      require_once("view/ferramentas_individual.php");
+      require_once("view/softskills.php");
     }
 );
 

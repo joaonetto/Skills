@@ -7,7 +7,7 @@
     FROM
       actar.tb_ferramentas
     WHERE
-          ( actar.tb_ferramentas.idFerramenta = $id_func );");
+      actar.tb_ferramentas.idFerramenta = $id_func;");
   $result1 = $result1[0][0];
 
   $result2 = $sql->select('
@@ -23,7 +23,6 @@
     ORDER BY
       actar.tb_questions.desQuestions ASC;');
 ?>
-
 <section>
   <div id="corpo">
     <h1>Questões Destinadas as Ferramentas ACTAR: <?php echo $result1 ?></h1>
@@ -63,7 +62,6 @@
             and ( actar.tb_questions_ferramentas_answers.answerFuncFerramenta = ' . $Count1 . ' );');
         $myAnswers_Tech[$Count1] = $result3[0][0];
       }
-
       echo '<div class="panel panel-default">';
       echo '	<div class="panel-heading"><a href="ferrquestion-' . $column['idQuestions'] . '-(' . implode(", ",$myAnswers_Tech) . ')">' . $column['desQuestions'] . '</a></div>';
       echo '	<div class="panel-body">';
