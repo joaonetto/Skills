@@ -21,6 +21,13 @@
 			actar.tb_ferramentas
 		ORDER BY
 			actar.tb_ferramentas.nomeFerramenta ASC;");
+	$result4 = $sql->select("
+		SELECT
+			actar.tb_softskills.idSoftSkills, actar.tb_softskills.nomeSoftSkills
+		FROM
+			actar.tb_softskills
+		ORDER BY
+			actar.tb_softskills.nomeSoftSkills ASC;");
 ?>
 <!DOCTYPE html>
 <html>
@@ -87,8 +94,8 @@
 							<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Soft Skills ACTAR<span class="caret"></span></button>
 							<ul class="dropdown-menu dropdown-menu-right">
 								<?php
-									foreach ($result3 as $column) {
-										echo '<li><a href="ferramentas-'. $column['idFerramenta'] .'">' . $column['nomeFerramenta'] . '</a></li>';
+									foreach ($result4 as $column) {
+										echo '<li><a href="ferramentas-'. $column['idSoftSkills'] .'">' . $column['nomeSoftSkills'] . '</a></li>';
 									}
 								?>
 									<li class="divider"></li>
