@@ -73,8 +73,6 @@ $app->get(
             $idFerrFunc[5] = $tempValue;
         }
       }
-      //echo json_encode($idFerrFunc);
-      //exit;
       require_once("view/ferramentas_funcionarios.php");
     }
 );
