@@ -75,7 +75,7 @@
 	$result1 = $sql->select('
 		SELECT
 			actar.tb_questions_ferramentas.idFerramenta,
-			COUNT( actar.tb_questions_ferramentas.idFerramenta ) AS Ferramenta_Total
+			COUNT( actar.tb_questions_ferramentas.idFerramenta ) AS Ferramentas_Total
 		FROM
 			actar.tb_questions_ferramentas
 		WHERE

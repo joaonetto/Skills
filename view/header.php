@@ -46,7 +46,7 @@
 			<div class="row header-tabela">
 				<div class="col-md-12 header-posicao-menu">
 					<div class="btn-group">
-					  <button type="button" class="btn btn-success">Inicio</button>
+					  <a type="button" class="btn btn-success" href="index.php">Inicio</a>
 						<div class="btn-group">
 							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Questões por Fabricantes<span class="caret"></span></button>
 							<ul class="dropdown-menu">

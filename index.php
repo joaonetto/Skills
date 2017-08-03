@@ -61,7 +61,7 @@ $app->get(
 $app->get(
     '/ferramentasfunc-:id_func',
     function($id_func){
-      $idFerrFunc[0] = substr($id_func,0,1); // Referente a idTech_Area
+      $idFerrFunc[0] = substr($id_func,0,1); // Referente a idFerramenta
       $idFerrFunc[1] = substr($id_func,1,(strpos($id_func, '('))-2); // Referente ao idFuncionario
       $tempValue = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
 
@@ -73,7 +73,9 @@ $app->get(
             $idFerrFunc[5] = $tempValue;
         }
       }
-      require_once("view/tech_funcionarios.php");
+      //echo json_encode($idFerrFunc);
+      //exit;
+      require_once("view/ferramentas_funcionarios.php");
     }
 );
 

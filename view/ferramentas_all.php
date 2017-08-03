@@ -28,7 +28,7 @@
     arsort($myAnswer_User[$column_Ferramentas['idFerramenta']]);
     foreach ($myAnswer_Ferramenta[$column_Ferramentas['idFerramenta']] as $idArea => $valueArea) {
       $myAnswer_Ferramenta[$column_Ferramentas['idFerramenta']][$idArea] =
-        number_format((( $valueArea ) / ( $GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramenta_Total'] * $GLOBALS['$qlb_Funcionarios_Total'] ) * 100 ), 2, ".", "");
+        number_format((( $valueArea ) / ( $GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramentas_Total'] * $GLOBALS['$qlb_Funcionarios_Total'] ) * 100 ), 2, ".", "");
     }
     ksort($myAnswer_Ferramenta[$column_Ferramentas['idFerramenta']]);
   }
@@ -96,9 +96,9 @@
       foreach ($myAnswer_User[$column_Ferramentas['idFerramenta']] as $idFuncionario => $valueAnswer) {
         echo '    <div class="row">';
         echo '      <div class="col-md-4 cabecalho-vazio"></div>';
-        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="ferrfunc-' . $column_Ferramentas['idFerramenta'] . $idFuncionario . '-(' . $GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramenta_Total'] . ',' . $valueAnswer . ',' . $myUsers[$idFuncionario] . ',' . $column_Ferramentas['nomeFerramenta'] . ')">' . $myUsers[$idFuncionario] . '</a></div>';
+        echo '      <div class="col-md-2 cabecalho-ranking-result"><a href="ferramentasfunc-' . $column_Ferramentas['idFerramenta'] . $idFuncionario . '-(' . $GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramentas_Total'] . ',' . $valueAnswer . ',' . $myUsers[$idFuncionario] . ',' . $column_Ferramentas['nomeFerramenta'] . ')">' . $myUsers[$idFuncionario] . '</a></div>';
         echo '      <div class="col-md-1 cabecalho-ranking-result">' . $valueAnswer . '</div>';
-        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format((( $valueAnswer / ($GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramenta_Total'] * 5)) * 100), 2, ".", "") . '</div>';
+        echo '      <div class="col-md-1 cabecalho-ranking-result">' . number_format((( $valueAnswer / ($GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramentas_Total'] * 5)) * 100), 2, ".", "") . '</div>';
         echo '      <div class="col-md-4 cabecalho-vazio"></div>';
         echo '    </div>';
         $valorMedio = $valorMedio + $valueAnswer;
@@ -111,7 +111,7 @@
       echo '    </div>';
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
-      echo '      <div class="col-md-4 cabecalho-tabela-funcionario text-blue">' . number_format(($valorMedio / (($GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramenta_Total'] * 5) * $GLOBALS['$qlb_Funcionarios_Total']) * 100), 2, ".", "") . '%</div>';
+      echo '      <div class="col-md-4 cabecalho-tabela-funcionario text-blue">' . number_format(($valorMedio / (($GLOBALS['$qlb_Questions_Ferramentas_Total'][$column_Ferramentas['idFerramenta'] - 1]['Ferramentas_Total'] * 5) * $GLOBALS['$qlb_Funcionarios_Total']) * 100), 2, ".", "") . '%</div>';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
       echo '    <br>';
