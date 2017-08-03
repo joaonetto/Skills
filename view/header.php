@@ -84,7 +84,7 @@
               </ul>
 						</div>
 						<div class="btn-group">
-							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Soft Skills ACTAR<span class="caret"></span></button>
+							<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Soft Skills ACTAR<span class="caret"></span></button>
 							<ul class="dropdown-menu dropdown-menu-right">
 								<?php
 									foreach ($result3 as $column) {
