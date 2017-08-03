@@ -64,12 +64,33 @@
 
 	$result1 = $sql->select('
 		SELECT
+			actar.tb_ferramentas.idFerramenta,
+			actar.tb_ferramentas.nomeFerramenta
+		FROM
+			actar.tb_ferramentas
+		ORDER BY
+			actar.tb_ferramentas.nomeFerramenta ASC;');
+	$GLOBALS['$qlb_Ferramentas'] = $result1;
+
+	$result1 = $sql->select('
+		SELECT
+			actar.tb_questions_ferramentas.idFerramenta,
+			COUNT( actar.tb_questions_ferramentas.idFerramenta ) AS Ferramenta_Total
+		FROM
+			actar.tb_questions_ferramentas
+		WHERE
+			actar.tb_questions_ferramentas.idSurvey = ' . $GLOBALS['$analiseSurvey'] . '
+		GROUP BY
+			actar.tb_questions_ferramentas.idFerramenta;');
+	$GLOBALS['$qlb_Questions_Ferramentas_Total'] = $result1;
+
+	$result1 = $sql->select('
+		SELECT
 			count(*)
 		FROM
 			actar.tb_funcionarios
 		WHERE analiseFuncionario = ' . intval($GLOBALS['$analiseSurvey']) . ';');
 	$GLOBALS['$qlb_Funcionarios_Total'] = intval($result1[0][0]);
-
 
 	unset($result1, $sql);
 ?>

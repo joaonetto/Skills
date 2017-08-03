@@ -8,16 +8,18 @@
   foreach ($GLOBALS['$qlb_TechArea'] as $column_TechArea) {
     $result1 = $sql->select('
     SELECT
-      actar.tb_funcionarios.idFuncionario, actar.tb_funcionarios.nomeFuncionario, actar.tb_questions_tech_area_answers.answerFuncTechArea
+      actar.tb_funcionarios.idFuncionario,
+      actar.tb_funcionarios.nomeFuncionario,
+      actar.tb_questions_tech_area_answers.answerFuncTechArea
     FROM ( actar.tb_questions_tech_area_answers
-      INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario		= actar.tb_questions_tech_area_answers.idFuncionario )
+      INNER JOIN actar.tb_funcionarios	ON actar.tb_funcionarios.idFuncionario		= actar.tb_questions_tech_area_answers.idFuncionario )
     WHERE
-          ( actar.tb_questions_tech_area_answers.idSurvey = ' . $GLOBALS['$analiseSurvey'] . ' )
-      and ( actar.tb_questions_tech_area_answers.idTech_Area = ' . $column_TechArea['idTech_Area'] . ' )
-      and ( actar.tb_funcionarios.analiseFuncionario = 1 )
+          ( actar.tb_questions_tech_area_answers.idSurvey     = ' . $GLOBALS['$analiseSurvey'] . ' )
+      AND ( actar.tb_questions_tech_area_answers.idTech_Area  = ' . $column_TechArea['idTech_Area'] . ' )
+      AND ( actar.tb_funcionarios.analiseFuncionario          = 1 )
     ORDER BY
       actar.tb_funcionarios.idFuncionario,
-      actar.tb_questions_tech_area_answers.answerFuncTechArea asc;');
+      actar.tb_questions_tech_area_answers.answerFuncTechArea ASC;');
     foreach ($result1 as $column_Result1) {
       $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] = $myAnswer_User[$column_TechArea['idTech_Area']][$column_Result1['idFuncionario']] + $column_Result1['answerFuncTechArea'];
       $myUsers[$column_Result1['idFuncionario']] = $column_Result1['nomeFuncionario'];

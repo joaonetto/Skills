@@ -73,14 +73,14 @@
 						</div>
 						<div class="btn-group">
 							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Ferramentas ACTAR<span class="caret"></span></button>
-							<ul class="dropdown-menu">
+							<ul class="dropdown-menu dropdown-menu-right">
 								<?php
 									foreach ($result3 as $column) {
 										echo '<li><a href="ferramentas-'. $column['idFerramenta'] .'">' . $column['nomeFerramenta'] . '</a></li>';
 									}
 								?>
                   <li class="divider"></li>
-                  <li><a href="#">Resumo Ferramentas</a></li>
+                  <li><a href="ferramentas-0">Resumo Ferramentas</a></li>
               </ul>
 						</div>
 					</div>

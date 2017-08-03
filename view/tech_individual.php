@@ -66,11 +66,11 @@
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '      <div class="col-md-3 cabecalho-tabela-funcionario-individual">' . $column['nomeFuncionario'] . '</div>';
-      if (intval($column['answerFuncionario']) < 3 ){
+      if (intval($column['answerFuncTechArea']) < 3 ){
         echo '<div class="col-md-1 cabecalho-tabela-funcionario-individual text-red">';
-      } elseif (intval($column['answerFuncionario']) == 3 ) {
+      } elseif (intval($column['answerFuncTechArea']) == 3 ) {
         echo '<div class="col-md-1 cabecalho-tabela-funcionario-individual text-green">';
-      } elseif (intval($column['answerFuncionario']) > 3) {
+      } elseif (intval($column['answerFuncTechArea']) > 3) {
         echo '<div class="col-md-1 cabecalho-tabela-funcionario-individual text-blue">';
       }
       echo $column['answerFuncTechArea'] . '</div>';
