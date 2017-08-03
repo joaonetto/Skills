@@ -6,6 +6,7 @@
 2-> Atualizar variaveis Globais<br>
 3-> Adicionar em Vendors_ALL Médias Ponderadas<br>
 4-> Adicionar Links em Vendors<br>
+5-> Incluir SoftSkills<br>
 
 
 #Executado
