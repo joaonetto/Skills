@@ -2,12 +2,10 @@
 
 # TODO
 
-1-> Adicionar área para variaveis Globais<br>
-2-> Atualizar variaveis Globais<br>
-3-> Adicionar em Vendors_ALL Médias Ponderadas<br>
-4-> Adicionar Links em Vendors<br>
-5-> Clean-UP<br>
-6-> Ajustar Tabela Inicial<br>
+1-> Adicionar em Vendors_ALL Médias Ponderadas<br>
+2-> Adicionar Links em Vendors<br>
+3-> Clean-UP<br>
+
 
 
 # Executado
@@ -17,3 +15,6 @@
 3-> Ajustar MENU<br>
 4-> Incluir SoftSkills<br>
 5-> Ajustar UNSET<br>
+6-> Adicionar área para variaveis Globais<br>
+7-> Atualizar variaveis Globais<br>
+8-> Ajustar Tabela Inicial<br>

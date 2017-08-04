@@ -1,5 +1,6 @@
 <?php
-require 'include/configuration.php';
+require 'include/dbaccess.php';
+require 'include/globaldata.php';
 require 'lib/Slim-2.x/Slim/Slim.php';
 
 \Slim\Slim::registerAutoloader();
