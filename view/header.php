@@ -99,7 +99,7 @@
 									}
 								?>
 									<li class="divider"></li>
-									<li><a href="ferramentas-0">Resumo Ferramentas</a></li>
+									<li><a href="softskills-0">Resumo Soft Skills ACTAR</a></li>
 							</ul>
 						</div>
 					</div>

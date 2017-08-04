@@ -34,7 +34,7 @@
         Soft Skills ACTAR
     </h3>
     <h5>
-      1 - Nãor tem tais qualificações<br>
+      1 - Não. Sem as devidas qualificações<br>
       2 - Sim. Qualificações Parciais;<br>
       3 - Sim. Tem completamente as Qualificações;<br>
     </h5>
@@ -79,7 +79,17 @@
       echo '  </div>';
       echo '</div>';
     }
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql, $myAnswers_Pre, $myAnswers_Del, $myAnswers_Sup);
+    unset(
+      $sql,
+      $result1,
+      $result2,
+      $result3,
+      $id_func,
+      $Count1,
+      $Count2,
+      $myAnswers_Soft,
+      $column
+    );
 
   ?>
   <br>

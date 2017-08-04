@@ -114,7 +114,26 @@ $app->get(
     function($id_func){
       $idSkillsQuestion[0] = substr($id_func, 0, (strpos($id_func, '(')) - 1); // Referente a idQuestion
       $idSkillsQuestion[1] = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
-      require_once("view/skills_individual.php");
+      require_once("view/softskills_individual.php");
+    }
+);
+
+$app->get(
+    '/softskillsfunc-:id_func',
+    function($id_func){
+      $idSoftSkillsFunc[0] = substr($id_func,0,1); // Referente a idFerramenta
+      $idSoftSkillsFunc[1] = substr($id_func,1,(strpos($id_func, '('))-2); // Referente ao idFuncionario
+      $tempValue = substr($id_func, (strpos($id_func, '(') + 1), (strpos($id_func, ')') - strpos($id_func, '(') - 1));
+
+      for ($i=1; $i <= 4 ; $i++) {
+        if ($i < 4) {
+          $idSoftSkillsFunc[$i + 1] = substr($tempValue, 0, strpos($tempValue, ','));
+          $tempValue = substr($tempValue, strpos($tempValue, ',') + 1, (strlen($tempValue) - strpos($tempValue, ',') + 1));
+        } elseif ($i = 4) {
+            $idSoftSkillsFunc[5] = $tempValue;
+        }
+      }
+      require_once("view/softskills_funcionarios.php");
     }
 );
 

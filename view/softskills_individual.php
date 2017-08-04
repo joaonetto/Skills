@@ -40,10 +40,11 @@
           <br>
           <br>
           <ul>
-            <li class='text-red'><strong>Vermelho</strong>: Resposta <strong><ins>NÃO.</ins></strong> Valor da Resposta é 1;</li>
-            <li class='text-green'><strong>Verde</strong>: Resposta <strong><ins>SIM. Parcialmente.</ins></strong> Valor da Resposta é 2;</li>
-            <li class='text-blue'><strong>Azul</strong>: Resposta <strong><ins>SIM. Completamente.</ins></strong> Valor da Resposta é 3.</li>
+            <li class='text-red'><strong>Vermelho</strong>: Valores abaixo da média. Valor 1;</li>
+            <li class='text-green'><strong>Verde</strong>: Valor Médio. 2;</li>
+            <li class='text-blue'><strong>Azul</strong>: Valor acima da média. Valor 3.</li>
           </ul>
+          <br>
           <div class="row">
             <div class="col-md-4 cabecalho-vazio"></div>
             <div class="col-md-4 cabecalho-tabela">Resultado</div>
@@ -78,7 +79,12 @@
       echo '    </div>';
     }
 
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql, $myAnswers_Pre, $myAnswers_Del, $myAnswers_Sup);
+    unset(
+      $sql,
+      $result1,
+      $idSkillsQuestion,
+      $column
+    );
   ?>
       </div>
     </div>

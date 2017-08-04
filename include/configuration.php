@@ -86,6 +86,28 @@
 
 	$result1 = $sql->select('
 		SELECT
+			actar.tb_softskills.idSoftSkills,
+			actar.tb_softskills.nomeSoftSkills
+		FROM
+			actar.tb_softskills
+		ORDER BY
+			actar.tb_softskills.nomeSoftSkills ASC;');
+	$GLOBALS['$qlb_SoftSkills'] = $result1;
+
+	$result1 = $sql->select('
+		SELECT
+			actar.tb_questions_softskills.idSoftSkills,
+			COUNT( actar.tb_questions_softskills.idSoftSkills) AS SoftSkills_Total
+		FROM
+			actar.tb_questions_softskills
+		WHERE
+			actar.tb_questions_softskills.idSurvey = ' . $GLOBALS['$analiseSurvey'] . '
+		GROUP BY
+			actar.tb_questions_softskills.idSoftSkills;');
+	$GLOBALS['$qlb_Questions_SoftSkills_Total'] = $result1;
+
+	$result1 = $sql->select('
+		SELECT
 			count(*)
 		FROM
 			actar.tb_funcionarios
