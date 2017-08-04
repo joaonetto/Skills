@@ -44,24 +44,26 @@
   <?php
     $Count1 = 1;
     $Count2 = 1;
-    $myAnswers_Tech = Array();
+    $myAnswers_Soft = Array();
     foreach ($result2 as $column) {
-      for ($Count1 = 1; $Count1 <= 5; $Count1++){
+      for ($Count1 = 1; $Count1 <= 3; $Count1++){
         $result3 = $sql->select('
-          SELECT
-            COUNT( actar.tb_questions_ferramentas_answers.answerFuncFerramenta )
-          FROM ( actar.tb_questions_ferramentas_answers
-            INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario		= actar.tb_questions_ferramentas_answers.idFuncionario)
-          WHERE
-                ( actar.tb_questions_ferramentas_answers.idSurvey             = ' . intval($GLOBALS['$analiseSurvey']) . ' )
-            and ( actar.tb_funcionarios.analiseFuncionario                    = 1 )
-            and ( actar.tb_questions_ferramentas_answers.idFerramenta         = ' . $id_func . ' )
-            and ( actar.tb_questions_ferramentas_answers.idQuestions          = ' . $column['idQuestions'] . ' )
-            and ( actar.tb_questions_ferramentas_answers.answerFuncFerramenta = ' . $Count1 . ' );');
-        $myAnswers_Tech[$Count1] = $result3[0][0];
+        SELECT
+          COUNT( actar.tb_questions_softskills_answers.answerFuncSoftSkills )
+        FROM ( actar.tb_questions_softskills_answers
+          INNER JOIN actar.tb_funcionarios	on actar.tb_funcionarios.idFuncionario		= actar.tb_questions_softskills_answers.idFuncionario)
+        WHERE
+              ( actar.tb_questions_softskills_answers.idSurvey              = ' . $GLOBALS['$analiseSurvey'] . ' )
+          and ( actar.tb_funcionarios.analiseFuncionario                    = 1 )
+          and ( actar.tb_questions_softskills_answers.idSoftSkills          = ' . $id_func . ' )
+          and ( actar.tb_questions_softskills_answers.idQuestions           = ' . $column['idQuestions'] . ' )
+          and ( actar.tb_questions_softskills_answers.answerFuncSoftSkills  = ' . $Count1 . ' );');
+        $myAnswers_Soft[$Count1] = $result3[0][0];
       }
+      //var_dump($myAnswers_Soft);
+      //exit;
       echo '<div class="panel panel-default">';
-      echo '	<div class="panel-heading"><a href="ferrquestion-' . $column['idQuestions'] . '-(' . implode(", ",$myAnswers_Tech) . ')">' . $column['desQuestions'] . '</a></div>';
+      echo '	<div class="panel-heading"><a href="ferrquestion-' . $column['idQuestions'] . '-(' . implode(", ",$myAnswers_Soft) . ')">' . $column['desQuestions'] . '</a></div>';
       echo '	<div class="panel-body">';
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';
@@ -71,8 +73,8 @@
       echo '    </div>';
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
-      echo '      <div id="graphTipoA' . $Count2++ . '" ChartValues="'
-                          . implode(", ",$myAnswers_Tech) . '"></div>';
+      echo '      <div id="graphTipoC' . $Count2++ . '" ChartValues="'
+                          . implode(", ",$myAnswers_Soft) . '"></div>';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
       echo '   </div>';
@@ -88,7 +90,7 @@
 </section>
 </body>
 </html>
-<script src="../include/js/ChartA.js"></script>
+<script src="../include/js/ChartC.js"></script>
 <?php
   $time_end = microtime(true);
 
