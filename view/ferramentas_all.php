@@ -1,9 +1,9 @@
 <?php
   $time_start = microtime(true);
-  $Count1             = 1;
-  $myAnswer_User      = Array();
+  $Count1               = 1;
+  $myAnswer_User        = Array();
   $myAnswer_Ferramenta  = Array();
-  $myUsers            = Array();
+  $myUsers              = Array();
   $sql = new Sql();
   foreach ($GLOBALS['$qlb_Ferramentas'] as $column_Ferramentas) {
     $result1 = $sql->select('
@@ -120,7 +120,16 @@
       echo '</div>';
       $valorMedio = 0;
     }
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql);
+    unset(
+      $result1,
+      $myAnswer_User,
+      $myAnswer_Ferramenta,
+      $myUsers,
+      $column_Ferramentas,
+      $sql,
+      $Count1,
+      $valorMedio
+    );
   ?>
   <br>
   <br>

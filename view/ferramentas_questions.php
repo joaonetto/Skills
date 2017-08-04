@@ -81,7 +81,17 @@
       echo '  </div>';
       echo '</div>';
     }
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql, $myAnswers_Pre, $myAnswers_Del, $myAnswers_Sup);
+    unset(
+      $sql,
+      $result1,
+      $result2,
+      $result3,
+      $id_func,
+      $Count1,
+      $Count2,
+      $myAnswers_Tech,
+      $column
+    );
 
   ?>
   <br>

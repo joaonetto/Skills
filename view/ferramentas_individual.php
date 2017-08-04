@@ -15,20 +15,20 @@
     WHERE
           ( actar.tb_questions_ferramentas_answers.idSurvey = ' . intval($GLOBALS['$analiseSurvey']) . ' )
       and ( actar.tb_funcionarios.analiseFuncionario        = 1 )
-      and ( actar.tb_questions.idQuestions                  = ' . $idTechQuestion[0] . ' )
+      and ( actar.tb_questions.idQuestions                  = ' . $idFerrQuestion[0] . ' )
     ORDER BY
       actar.tb_questions_ferramentas_answers.answerFuncFerramenta DESC,
       actar.tb_funcionarios.nomeFuncionario ASC;');
-  $idTechQuestion[2] = $result1[0][3];
-  $idTechQuestion[3] = $result1[0][1];
+  $idFerrQuestion[2] = $result1[0][3];
+  $idFerrQuestion[3] = $result1[0][1];
 ?>
 <section>
   <div id="corpo">
     <h1>Análise das Questões Individuais de
       <br>
-      <?php echo $idTechQuestion[2] ?>
+      <?php echo $idFerrQuestion[2] ?>
       <br>
-      <?php echo $idTechQuestion[3] ?>
+      <?php echo $idFerrQuestion[3] ?>
       <br>
       <br>
     </h1>
@@ -51,7 +51,7 @@
           </div>
           <div class="row">
             <div class="col-md-4 cabecalho-vazio"></div>
-            <div id="graphTipoA1" ChartValues="<?php echo $idTechQuestion[1] ?>"></div>
+            <div id="graphTipoA1" ChartValues="<?php echo $idFerrQuestion[1] ?>"></div>
             <div class="col-md-4 cabecalho-vazio"></div>
           </div>
           <br>
@@ -78,7 +78,12 @@
       echo '    </div>';
     }
 
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql, $myAnswers_Pre, $myAnswers_Del, $myAnswers_Sup);
+    unset(
+      $sql,
+      $result1,
+      $idFerrQuestion,
+      $column
+    );
   ?>
       </div>
     </div>

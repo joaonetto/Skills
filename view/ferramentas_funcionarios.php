@@ -60,8 +60,6 @@
   </div>
   <br>
   <?php
-    $Count1 = 0;
-    $Count2 = 1;
     foreach ($result1 as $column) {
       echo '<div class="panel panel-default">';
       echo '	<div class="panel-heading">' . $column['desQuestions'] . '</div>';
@@ -89,7 +87,12 @@
       echo '</div>';
     }
 
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql, $myAnswers_Pre, $myAnswers_Del, $myAnswers_Sup);
+    unset(
+      $sql,
+      $result1,
+      $idFerrFunc,
+      $column
+    );
   ?>
   <br>
   <br>
