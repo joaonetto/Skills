@@ -60,10 +60,8 @@
           and ( actar.tb_questions_softskills_answers.answerFuncSoftSkills  = ' . $Count1 . ' );');
         $myAnswers_Soft[$Count1] = $result3[0][0];
       }
-      //var_dump($myAnswers_Soft);
-      //exit;
       echo '<div class="panel panel-default">';
-      echo '	<div class="panel-heading"><a href="ferrquestion-' . $column['idQuestions'] . '-(' . implode(", ",$myAnswers_Soft) . ')">' . $column['desQuestions'] . '</a></div>';
+      echo '	<div class="panel-heading"><a href="skillsquestion-' . $column['idQuestions'] . '-(' . implode(", ",$myAnswers_Soft) . ')">' . $column['desQuestions'] . '</a></div>';
       echo '	<div class="panel-body">';
       echo '	 <div class="panel-espaco-interno">';
       echo '    <div class="row">';
