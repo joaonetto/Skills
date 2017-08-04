@@ -111,3 +111,13 @@
 				</div>
       </div>
 		</header>
+		<?php
+			unset(
+				$sql,
+				$result1,
+				$result2,
+				$result3,
+				$result4,
+				$column
+			);
+		?>

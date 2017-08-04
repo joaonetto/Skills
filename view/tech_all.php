@@ -1,6 +1,5 @@
 <?php
   $time_start = microtime(true);
-  $Count1             = 1;
   $myAnswer_User      = Array();
   $myAnswer_TechArea  = Array();
   $myUsers            = Array();
@@ -120,7 +119,16 @@
       echo '</div>';
       $valorMedio = 0;
     }
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql);
+    unset(
+      $sql,
+      $result1,
+      $myAnswer_User,
+      $myAnswer_TechArea,
+      $myUsers,
+      $column_Result1,
+      $column_TechArea,
+      $valorMedio
+    );
   ?>
   <br>
   <br>

@@ -55,7 +55,14 @@
           }
           echo '</table>';
         }
-        unset($result1, $result2, $total_result1, $total_result2, $column, $sql);
+        unset(
+          $sql,
+          $result1,
+          $result2,
+          $total_result1,
+          $total_result2,
+          $column
+        );
       ?>
       <br>
       <br>

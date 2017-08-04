@@ -250,7 +250,21 @@
       echo '  </div>';
       echo '</div>';
     }
-    unset($result1, $result2, $total_result1, $total_result2, $column, $sql);
+    unset(
+      $sql,
+      $result1,
+      $myAnswer,
+      $myUsers_Pre,
+      $myUsers_Del,
+      $myUsers_Sup,
+      $Count1,
+      $Count2,
+      $Count3,
+      $Count4,
+      $myUsers_Pre_New,
+      $myUsers_Del_New,
+      $myUsers_Sup_New
+    );
   ?>
   <br>
   <br>
