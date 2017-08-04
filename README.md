@@ -7,6 +7,7 @@
 3-> Adicionar em Vendors_ALL Médias Ponderadas<br>
 4-> Adicionar Links em Vendors<br>
 5-> Clean-UP<br>
+6-> Ajustar Tabela Inicial<br>
 
 
 # Executado
