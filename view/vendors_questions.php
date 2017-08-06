@@ -125,11 +125,11 @@
       echo '      <div class="col-md-4 cabecalho-individual">Suporte</div>';
       echo '    </div>';
       echo '    <div class="row">';
-      echo '      <div id="graphTipoA' . $Count1++ . '" ChartValues="'
+      echo '      <div id="graphTipoA' . $Count1++ . '" class="graphTipoA" ChartValues="'
                           . implode(", ",$myAnswers_Pre) . '"></div>';
-      echo '      <div id="graphTipoA' . $Count1++ . '" ChartValues="'
+      echo '      <div id="graphTipoA' . $Count1++ . '" class="graphTipoA" ChartValues="'
                           . implode(", ",$myAnswers_Del) . '"></div>';
-      echo '      <div id="graphTipoA' . $Count1++ . '" ChartValues="'
+      echo '      <div id="graphTipoA' . $Count1++ . '" class="graphTipoA" ChartValues="'
                           . implode(", ",$myAnswers_Sup) . '"></div>';
       echo '    </div>';
       echo '   </div>';
@@ -156,7 +156,6 @@
 </section>
 </body>
 </html>
-<script src="../include/js/ChartA.js"></script>
 <?php
   $time_end = microtime(true);
 

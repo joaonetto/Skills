@@ -40,6 +40,7 @@
 		<script src="lib/jQuery/jquery-3.2.1.min.js"></script>
 		<script src="lib/Bootstrap/js/bootstrap.min.js"></script>
 		<script src="../lib/htmlBarGraph/html5-canvas-bar-graph.js"></script>
+		<script src="../include/js/Chart.js"></script>
     <link rel="stylesheet" href="../include/css/skills.css">
 	</head>
 	<body>

@@ -22,8 +22,12 @@
         graph.update(valor);
       }
 
-      var ctx = createCanvas('graphTipoB1');
+      var ctx = createCanvas('graphTipoA1');
       var valorString = document.getElementById('graphTipoB1').getAttribute('ChartValues').split(', ');
+      var plotaGrafico = criaGraph(ctx, valorString, 'graphTipoB');
+
+      var ctx = createCanvas('graphTipoB1');
+      var valorString = document.getElementById('graphTipoB2').getAttribute('ChartValues').split(', ');
       var plotaGrafico = criaGraph(ctx, valorString, 'graphTipoB');
 
       var ctx = createCanvas('graphTipoB2');

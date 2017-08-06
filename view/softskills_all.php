@@ -74,7 +74,7 @@
       echo '    </div>';
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
-      echo '      <div id="graphTipoD' . $Count1++ . '" ChartValues="'
+      echo '      <div id="graphTipoD' . $Count1++ . '" class="graphTipoD" ChartValues="'
                           . implode(", ",$myAnswer_SoftSkills[$column_SoftSkills['idSoftSkills']]) . '"></div>';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
@@ -135,7 +135,6 @@
 </section>
 </body>
 </html>
-<script src="../include/js/ChartD.js"></script>
 <?php
   $time_end = microtime(true);
 

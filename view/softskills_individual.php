@@ -52,7 +52,7 @@
           </div>
           <div class="row">
             <div class="col-md-4 cabecalho-vazio"></div>
-            <div id="graphTipoA1" ChartValues="<?php echo $idSkillsQuestion[1] ?>"></div>
+            <div id="graphTipoC1" class="graphTipoC" ChartValues="<?php echo $idSkillsQuestion[1] ?>"></div>
             <div class="col-md-4 cabecalho-vazio"></div>
           </div>
           <br>
@@ -93,9 +93,6 @@
 </section>
 </body>
 </html>
-
-
-<script src="../include/js/ChartA.js"></script>
 <?php
   $time_end = microtime(true);
 

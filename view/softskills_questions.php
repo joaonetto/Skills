@@ -71,7 +71,7 @@
       echo '    </div>';
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
-      echo '      <div id="graphTipoC' . $Count2++ . '" ChartValues="'
+      echo '      <div id="graphTipoC' . $Count2++ . '" class="graphTipoC" ChartValues="'
                           . implode(", ",$myAnswers_Soft) . '"></div>';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
@@ -98,7 +98,6 @@
 </section>
 </body>
 </html>
-<script src="../include/js/ChartC.js"></script>
 <?php
   $time_end = microtime(true);
 

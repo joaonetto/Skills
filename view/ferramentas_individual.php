@@ -51,7 +51,7 @@
           </div>
           <div class="row">
             <div class="col-md-4 cabecalho-vazio"></div>
-            <div id="graphTipoA1" ChartValues="<?php echo $idFerrQuestion[1] ?>"></div>
+            <div id="graphTipoA1" class="graphTipoA" ChartValues="<?php echo $idFerrQuestion[1] ?>"></div>
             <div class="col-md-4 cabecalho-vazio"></div>
           </div>
           <br>
@@ -77,7 +77,6 @@
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
     }
-
     unset(
       $sql,
       $result1,
@@ -92,9 +91,6 @@
 </section>
 </body>
 </html>
-
-
-<script src="../include/js/ChartA.js"></script>
 <?php
   $time_end = microtime(true);
 

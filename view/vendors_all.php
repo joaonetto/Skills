@@ -199,19 +199,19 @@
       echo '      <div class="col-md-4 cabecalho-individual">Suporte</div>';
       echo '    </div>';
       echo '    <div class="row">';
-      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
+      echo '      <div id="graphTipoB' . $Count2++ . '" class="graphTipoB" ChartValues="' .
                     number_format((($myAnswer[$Count1][ 3] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][ 4] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][ 5] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][ 6] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][ 7] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
-      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
+      echo '      <div id="graphTipoB' . $Count2++ . '" class="graphTipoB" ChartValues="' .
                     number_format((($myAnswer[$Count1][ 8] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][ 9] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][10] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][11] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][12] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). '"></div>';
-      echo '      <div id="graphTipoB' . $Count2++ . '" ChartValues="' .
+      echo '      <div id="graphTipoB' . $Count2++ . '" class="graphTipoB" ChartValues="' .
                     number_format((($myAnswer[$Count1][13] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][14] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
                     number_format((($myAnswer[$Count1][15] / ($myAnswer[$Count1][1] * $GLOBALS['$qlb_Funcionarios_Total'])) * 100 ), 2, ".", ""). ', ' .
@@ -272,7 +272,6 @@
 </section>
 </body>
 </html>
-<script src="../include/js/ChartB.js"></script>
 <?php
   $time_end = microtime(true);
 

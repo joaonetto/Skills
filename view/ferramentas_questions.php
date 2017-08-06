@@ -73,7 +73,7 @@
       echo '    </div>';
       echo '    <div class="row">';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
-      echo '      <div id="graphTipoA' . $Count2++ . '" ChartValues="'
+      echo '      <div id="graphTipoA' . $Count2++ . '" class="graphTipoA" ChartValues="'
                           . implode(", ",$myAnswers_Tech) . '"></div>';
       echo '      <div class="col-md-4 cabecalho-vazio"></div>';
       echo '    </div>';
@@ -100,7 +100,6 @@
 </section>
 </body>
 </html>
-<script src="../include/js/ChartA.js"></script>
 <?php
   $time_end = microtime(true);
 
