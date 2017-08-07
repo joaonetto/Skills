@@ -5,7 +5,7 @@
 1-> Adicionar em Vendors_ALL Médias Ponderadas<br>
 2-> Adicionar Links em Vendors<br>
 3-> Clean-UP<br>
-
+4-> Incluir APIs<br>
 
 
 # Executado

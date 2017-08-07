@@ -1,5 +1,6 @@
 <?php
 	$GLOBALS['$analiseSurvey'] = 1;
+  $GLOBALS['$myMachine'] = 'http://10.151.0.25/';
 
 	$sql = new Sql();
 
@@ -101,5 +102,23 @@
 			actar.tb_funcionarios
 		WHERE analiseFuncionario = ' . intval($GLOBALS['$analiseSurvey']) . ';');
 	$GLOBALS['$qlb_Funcionarios_Total'] = intval($result1[0][0]);
+
+  $result1 = $sql->select('
+		SELECT
+			*
+		FROM
+			actar.tb_departamentos
+    ORDER BY
+      actar.tb_departamentos.idDepartamento ASC;');
+	$GLOBALS['$qlb_Departamento'] = $result1;
+
+  $result1 = $sql->select('
+		SELECT
+			*
+		FROM
+			actar.tb_questions
+    ORDER BY
+      actar.tb_questions.idQuestions ASC;');
+	$GLOBALS['$qlb_Questions'] = $result1;
 
  ?>

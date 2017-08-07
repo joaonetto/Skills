@@ -143,6 +143,15 @@ $app->get(
     function () {
       $tempArray = Array();
       $tempArray[0]['descricao'] = "Dados de Funcionarios";
+      $tempArray[0]['link'] = $GLOBALS['$myMachine'] . 'api/funcionarios';
+      $tempArray[1]['descricao'] = "Dados do Survey";
+      $tempArray[1]['link'] = $GLOBALS['$myMachine'] . 'api/survey';
+      $tempArray[2]['descricao'] = "Todas as Questoes";
+      $tempArray[2]['link'] = $GLOBALS['$myMachine'] . 'api/questions';
+      $tempArray[3]['descricao'] = "Dados dos Vendors";
+      $tempArray[3]['link'] = $GLOBALS['$myMachine'] . 'api/vendors';
+      $tempArray[4]['descricao'] = "Vendors / Departamentos internos";
+      $tempArray[4]['link'] = $GLOBALS['$myMachine'] . 'api/vendors/departamentos';
       echo json_encode($tempArray);
       unset($tempArray);
     }
@@ -174,6 +183,18 @@ $app->get(
     }
 );
 
+$app->get(
+    '/api/vendors/departamentos',
+    function () {
+      $tempArray = Array();
+      foreach ($GLOBALS['$qlb_Departamento'] as $key => $value) {
+        $tempArray[$key]['idDepartamento'] = $GLOBALS['$qlb_Departamento'][$key]['idDepartamento'];
+        $tempArray[$key]['nomeDepartamento'] = $GLOBALS['$qlb_Departamento'][$key]['nomeDepartamento'];
+      }
+        echo json_encode($tempArray);
+        unset($tempArray);
+    }
+);
 
 $app->get(
     '/api/funcionarios',
@@ -184,6 +205,19 @@ $app->get(
         $tempArray[$key]['nomeFuncionario'] = $GLOBALS['$qlb_Funcionarios'][$key]['nomeFuncionario'];
         $tempArray[$key]['emailFuncionario'] = $GLOBALS['$qlb_Funcionarios'][$key]['emailFuncionario'];
         $tempArray[$key]['analiseFuncionario'] = $GLOBALS['$qlb_Funcionarios'][$key]['analiseFuncionario'];
+      }
+        echo json_encode($tempArray);
+        unset($tempArray);
+    }
+);
+
+$app->get(
+    '/api/questions',
+    function () {
+      $tempArray = Array();
+      foreach ($GLOBALS['$qlb_Questions'] as $key => $value) {
+        $tempArray[$key]['idQuestions'] = $GLOBALS['$qlb_Questions'][$key]['idQuestions'];
+        $tempArray[$key]['desQuestions'] = $GLOBALS['$qlb_Questions'][$key]['desQuestions'];
       }
         echo json_encode($tempArray);
         unset($tempArray);
