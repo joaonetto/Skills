@@ -138,4 +138,19 @@ $app->get(
     }
 );
 
+$app->get(
+    '/api/funcionarios',
+    function () {
+      $tempArray = Array();
+      foreach ($GLOBALS['$qlb_Funcionarios'] as $key => $value) {
+        $tempArray[$key]['idFuncionario'] = $GLOBALS['$qlb_Funcionarios'][$key]['idFuncionario'];
+        $tempArray[$key]['nomeFuncionario'] = $GLOBALS['$qlb_Funcionarios'][$key]['nomeFuncionario'];
+        $tempArray[$key]['emailFuncionario'] = $GLOBALS['$qlb_Funcionarios'][$key]['emailFuncionario'];
+        $tempArray[$key]['analiseFuncionario'] = $GLOBALS['$qlb_Funcionarios'][$key]['analiseFuncionario'];
+      }
+        echo json_encode($tempArray);
+        unset($tempArray);
+    }
+);
+
 $app->run();

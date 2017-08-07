@@ -83,4 +83,5 @@
 			actar.tb_funcionarios
 		WHERE analiseFuncionario = ' . intval($GLOBALS['$analiseSurvey']) . ';');
 	$GLOBALS['$qlb_Funcionarios_Total'] = intval($result1[0][0]);
+
  ?>
