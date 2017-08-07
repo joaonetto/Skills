@@ -139,6 +139,43 @@ $app->get(
 );
 
 $app->get(
+    '/api',
+    function () {
+      $tempArray = Array();
+      $tempArray[0]['descricao'] = "Dados de Funcionarios";
+      echo json_encode($tempArray);
+      unset($tempArray);
+    }
+);
+
+$app->get(
+    '/api/survey',
+    function () {
+      $tempArray = Array();
+      foreach ($GLOBALS['$qlb_survey'] as $key => $value) {
+        $tempArray[$key]['idSurvey'] = $GLOBALS['$qlb_survey'][$key]['idSurvey'];
+        $tempArray[$key]['dtSurvey'] = $GLOBALS['$qlb_survey'][$key]['dtSurvey'];
+      }
+        echo json_encode($tempArray);
+        unset($tempArray);
+    }
+);
+
+$app->get(
+    '/api/vendors',
+    function () {
+      $tempArray = Array();
+      foreach ($GLOBALS['$qlb_vendors'] as $key => $value) {
+        $tempArray[$key]['idVendor'] = $GLOBALS['$qlb_vendors'][$key]['idVendor'];
+        $tempArray[$key]['nomeVendor'] = $GLOBALS['$qlb_vendors'][$key]['nomeVendor'];
+      }
+        echo json_encode($tempArray);
+        unset($tempArray);
+    }
+);
+
+
+$app->get(
     '/api/funcionarios',
     function () {
       $tempArray = Array();

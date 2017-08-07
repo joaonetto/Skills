@@ -8,7 +8,7 @@ create table actar.tb_survey (
   */
 
 	idSurvey int unique auto_increment not null,
-  dtSuvey date not null,
+  dtSurvey date not null,
   constraint PK_Survey primary key(idSurvey)
 
 ) engine = InnoDB DEFAULT CHARSET = UTF8 COLLATE = utf8_general_ci;

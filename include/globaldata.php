@@ -3,6 +3,24 @@
 
 	$sql = new Sql();
 
+  $result1 = $sql->select('
+		SELECT
+			*
+		FROM
+			actar.tb_survey
+    ORDER BY
+      actar.tb_survey.idSurvey ASC;');
+	$GLOBALS['$qlb_survey'] = $result1;
+
+  $result1 = $sql->select('
+		SELECT
+			*
+		FROM
+			actar.tb_vendors
+    ORDER BY
+      actar.tb_vendors.nomeVendor ASC;');
+	$GLOBALS['$qlb_vendors'] = $result1;
+
 	$result1 = $sql->select('
 		SELECT
 			actar.tb_tech_area.idTech_Area, actar.tb_tech_area.nomeTech_Area
