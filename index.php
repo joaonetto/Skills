@@ -142,16 +142,20 @@ $app->get(
     '/api',
     function () {
       $tempArray = Array();
-      $tempArray[0]['descricao'] = "Dados de Funcionarios";
-      $tempArray[0]['link'] = $GLOBALS['$myMachine'] . 'api/funcionarios';
-      $tempArray[1]['descricao'] = "Dados do Survey";
-      $tempArray[1]['link'] = $GLOBALS['$myMachine'] . 'api/survey';
+      $tempArray[0]['descricao'] = "Dados do Survey";
+      $tempArray[0]['link'] = $GLOBALS['$myMachine'] . 'api/survey';
+      $tempArray[1]['descricao'] = "Dados de Funcionarios";
+      $tempArray[1]['link'] = $GLOBALS['$myMachine'] . 'api/funcionarios';
       $tempArray[2]['descricao'] = "Todas as Questoes";
       $tempArray[2]['link'] = $GLOBALS['$myMachine'] . 'api/questions';
-      $tempArray[3]['descricao'] = "Dados dos Vendors";
+      $tempArray[3]['descricao'] = "Nome dos Vendors";
       $tempArray[3]['link'] = $GLOBALS['$myMachine'] . 'api/vendors';
       $tempArray[4]['descricao'] = "Vendors / Departamentos internos";
       $tempArray[4]['link'] = $GLOBALS['$myMachine'] . 'api/vendors/departamentos';
+      $tempArray[5]['descricao'] = "Vendors / Questoes por Vendors";
+      $tempArray[5]['link'] = $GLOBALS['$myMachine'] . 'api/vendors/questions';
+      $tempArray[6]['descricao'] = "Vendors / Respostas dos Funcionarios";
+      $tempArray[6]['link'] = $GLOBALS['$myMachine'] . 'api/vendors/answers';
       echo json_encode($tempArray);
       unset($tempArray);
     }
@@ -195,6 +199,38 @@ $app->get(
         unset($tempArray);
     }
 );
+
+$app->get(
+    '/api/vendors/questions',
+    function () {
+      $tempArray = Array();
+      foreach ($GLOBALS['$qlb_Vendors_Questions'] as $key => $value) {
+        $tempArray[$key]['idSurvey'] = $GLOBALS['$qlb_Vendors_Questions'][$key]['idSurvey'];
+        $tempArray[$key]['idVendor'] = $GLOBALS['$qlb_Vendors_Questions'][$key]['idVendor'];
+        $tempArray[$key]['idQuestions'] = $GLOBALS['$qlb_Vendors_Questions'][$key]['idQuestions'];
+      }
+        echo json_encode($tempArray);
+        unset($tempArray);
+    }
+);
+
+$app->get(
+    '/api/vendors/answers',
+    function () {
+      $tempArray = Array();
+      foreach ($GLOBALS['$qlb_Vendors_Answers'] as $key => $value) {
+        $tempArray[$key]['idSurvey'] = $GLOBALS['$qlb_Vendors_Answers'][$key]['idSurvey'];
+        $tempArray[$key]['idFuncionario'] = $GLOBALS['$qlb_Vendors_Answers'][$key]['idFuncionario'];
+        $tempArray[$key]['idVendor'] = $GLOBALS['$qlb_Vendors_Answers'][$key]['idVendor'];
+        $tempArray[$key]['idQuestions'] = $GLOBALS['$qlb_Vendors_Answers'][$key]['idQuestions'];
+        $tempArray[$key]['idDepartamento'] = $GLOBALS['$qlb_Vendors_Answers'][$key]['idDepartamento'];
+        $tempArray[$key]['answer'] = $GLOBALS['$qlb_Vendors_Answers'][$key]['answerFuncionario'];
+      }
+        echo json_encode($tempArray);
+        unset($tempArray);
+    }
+);
+
 
 $app->get(
     '/api/funcionarios',

@@ -3,7 +3,7 @@
 	class Sql {
 		public $conn;
 		public function __construct(){
-			return $this->conn = mysqli_connect("10.151.0.25", "root", "Laboratorio", "actar");
+			return $this->conn = mysqli_connect($_ENV['MYSQL_IP'], $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD'], "actar");
 		}
 		public function query($string_query){
 			return mysqli_query($this->conn, $string_query);

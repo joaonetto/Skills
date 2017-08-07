@@ -1,6 +1,10 @@
 <?php
+  $MYSQL_IP = $_ENV['MYSQL_IP'];
+  //var_dump($MYSQL_IP);
+  //exit;
+
 	$GLOBALS['$analiseSurvey'] = 1;
-  $GLOBALS['$myMachine'] = 'http://10.151.0.25/';
+  $GLOBALS['$myMachine'] = 'http://' . $_ENV['MYSQL_IP'] . '/';
 
 	$sql = new Sql();
 
@@ -120,5 +124,31 @@
     ORDER BY
       actar.tb_questions.idQuestions ASC;');
 	$GLOBALS['$qlb_Questions'] = $result1;
+
+  $result1 = $sql->select('
+    SELECT
+      *
+    FROM
+      actar.tb_questions_vendors
+    ORDER BY
+      actar.tb_questions_vendors.idSurvey ASC,
+      actar.tb_questions_vendors.idvendor ASC,
+      actar.tb_questions_vendors.idQuestions ASC;');
+	$GLOBALS['$qlb_Vendors_Questions'] = $result1;
+
+  $result1 = $sql->select('
+    SELECT
+      *
+    FROM
+      actar.tb_questions_answers
+    ORDER BY
+      actar.tb_questions_answers.idSurvey ASC,
+      actar.tb_questions_answers.idFuncionario ASC,
+      actar.tb_questions_answers.idVendor ASC,
+      actar.tb_questions_answers.idQuestions ASC,
+      actar.tb_questions_answers.idDepartamento ASC;');
+	$GLOBALS['$qlb_Vendors_Answers'] = $result1;
+
+
 
  ?>
